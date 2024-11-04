@@ -131,6 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.21
@@ -174,6 +186,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -248,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -321,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -393,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -483,6 +511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -555,6 +587,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -792,6 +828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -821,6 +861,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -865,6 +917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -894,6 +950,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -937,6 +1005,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1082,6 +1154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1111,6 +1187,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1155,6 +1243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1184,6 +1276,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1228,6 +1332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1257,6 +1365,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1301,6 +1421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1330,6 +1454,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03
@@ -1374,6 +1510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1403,6 +1543,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1447,6 +1599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1476,6 +1632,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1520,6 +1688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1549,6 +1721,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.63
@@ -1592,6 +1776,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1666,6 +1854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1739,6 +1931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1768,6 +1964,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -1811,6 +2019,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1885,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1958,6 +2174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitBehaviour (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1987,6 +2207,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336512786}
     m_Modifications:
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 731034017493500230, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164720563761969059, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27
@@ -2030,6 +2262,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2148,6 +2384,10 @@ PrefabInstance:
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: UnitBehaviour
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: factionName
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

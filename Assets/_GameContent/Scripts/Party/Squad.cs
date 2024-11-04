@@ -13,10 +13,11 @@ public class Squad : MonoBehaviour
     void Start()
     {
 
-        // Устанавливаем базовую скорость для всех юнитов
+        // Устанавливаем базовую скорость для всех юнитов и ссылку на отряд
         foreach (Unit member in squadMembers)
         {
             member.SetBaseSpeed(baseMoveSpeed);
+            member.SetSquad(this);
         }
     }
 
@@ -26,6 +27,7 @@ public class Squad : MonoBehaviour
         {
             squadMembers.Add(unit);
             unit.SetBaseSpeed(baseMoveSpeed);
+            unit.SetSquad(this);
         }
     }
 

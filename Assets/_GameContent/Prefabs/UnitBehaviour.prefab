@@ -161,3 +161,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50ef8f51df02aa4d8f77d27af33f2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealth: 100
+  factionName: 
+  attackRange: 1.5
+  attackDetectRange: 3
+  attackDamage: 10
+  attackCooldown: 1
+  attractionForce: 0.5
