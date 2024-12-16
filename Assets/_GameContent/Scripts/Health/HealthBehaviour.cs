@@ -40,6 +40,11 @@ public class HealthBehaviour : MonoBehaviour
     }
     public delegate void OnHealthChangeEvent(int currentHealth);
     public OnHealthChangeEvent OnHealthChange;
+
+    public void SetIndex(int index)
+    {
+        this.index = index;
+    }
     public void GetDamage(int count)
     {
         if (!isInvoul)

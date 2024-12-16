@@ -29,5 +29,19 @@ public class Squad : MonoBehaviour
             squadMembers[i].MoveTo(targetPosition);
         }
     }
+    public Unit MostCloseUnit(Vector2 position)
+    {
+        float distance = float.MaxValue;
+        Unit unit = null;
+        for (int i = 0; i < squadMembers.Count; i++)
+        {
+            float distanceToUnit = Vector2.Distance(squadMembers[i].transform.position, position);
+            if (distanceToUnit < distance)
+            {
+                unit = squadMembers[i];
+            }
+        }
+        return unit;
+    }
 
 }

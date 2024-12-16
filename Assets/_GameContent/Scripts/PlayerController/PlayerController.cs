@@ -7,20 +7,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Squad squad;
     private Vector2 targetPosition;
 
+    private bool isMoving = false;
+
     private void FixedUpdate()
     {
         HandleMovement();
     }
-
-    public void HandleMovement()
+    private void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            // ѕолучаем позицию курсора мыши в мировом пространстве
             Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = Camera.main.transform.position.z; // ”станавливаем глубину равной высоте камеры
+            mousePosition.z = Camera.main.transform.position.z;
             targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            squad.SquadMove(targetPosition);
+            isMoving = true;
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isMoving = false;
+        }
+    }
+    public void HandleMovement()
+    {
+        if (isMoving)
+            squad.SquadMove(targetPosition);
     }
 }

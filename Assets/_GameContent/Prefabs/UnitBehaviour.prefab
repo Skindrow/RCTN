@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6425736371724533821}
   - component: {fileID: 8767746503009672494}
   - component: {fileID: -1613267124163507987}
+  - component: {fileID: 6520778440147038045}
+  - component: {fileID: 1384280262755186828}
   m_Layer: 0
   m_Name: UnitBehaviour
   m_TagString: Untagged
@@ -167,8 +169,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: -1613267124163507987}
-  health: {fileID: 0}
+  health: {fileID: 1384280262755186828}
+  detector: {fileID: 6520778440147038045}
+  attacker: {fileID: 0}
   moveForce: 200
+  attractForce: 5
+  fractionIndex: 0
+  enemyFraction: 0
+  CurrentSquad: {fileID: 0}
 --- !u!114 &-1613267124163507987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +189,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b34c46d04fdf14aa54df66e68dd832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6520778440147038045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286123005686503012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17660b78f4859446a801a373872085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectTick: 0.1
+  detectRadius: 2
+--- !u!114 &1384280262755186828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286123005686503012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efb09cc5ae44fc4c826f226442a384c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  onGetDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  invoulTime: 0
+  isDestroyedOnDeath: 1
+  index: 0
