@@ -5,22 +5,79 @@ using UnityEngine;
 
 public class Squad : MonoBehaviour
 {
-    public List<Unit> squadMembers = new List<Unit>();
+    [SerializeField] private int squadFraction;
+    [SerializeField] private List<Unit> startSquadMemders = new List<Unit>();
+    [SerializeField] private bool isDeadUnitLeave;
+    [SerializeField] private bool isCanRevive;
+    private List<Unit> squadMembers = new List<Unit>();
+    private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
-    private bool isAttacking = false;
 
-
+    private void Start()
+    {
+        InitializeStartUnits();
+        if (isCanRevive)
+        {
+            OnSquadDead += ReviveSquad;
+        }
+    }
+    private void OnDestroy()
+    {
+        OnSquadDead -= ReviveSquad;
+    }
+    private void ReviveSquad(List<DeadUnit> squadDeadUnits)
+    {
+        for (int i = 0; i < squadDeadUnits.Count; i++)
+        {
+            Unit reviveUnit = squadDeadUnits[i].ReviveUnit();
+            AddUnit(reviveUnit);
+        }
+        for (int i = 0; i < squadDeadUnits.Count; i++)
+        {
+            squadDeadUnits[i].BodyDestroy();
+        }
+    }
+    private void InitializeStartUnits()
+    {
+        for (int i = 0; i < startSquadMemders.Count; i++)
+        {
+            AddUnit(startSquadMemders[i]);
+        }
+    }
     public void AddUnit(Unit unit)
     {
-
+        if (!squadMembers.Contains(unit))
+        {
+            squadMembers.Add(unit);
+            unit.CurrentSquad = this;
+            unit.SetFraction(squadFraction);
+        }
     }
-
+    public delegate void SquadDead(List<DeadUnit> deadSquadList);
+    public static SquadDead OnSquadDead;
     public void RemoveUnit(Unit unit)
     {
         if (squadMembers.Contains(unit))
         {
+            if (isDeadUnitLeave)
+            {
+                LeaveDeadUnit(unit);
+            }
             squadMembers.Remove(unit);
         }
+        if (isDeadUnitLeave && squadMembers.Count <= 0)
+        {
+            for (int i = 0; i < deadUnits.Count; i++)
+            {
+                deadUnits[i].IsCanRevive = true;
+            }
+            OnSquadDead?.Invoke(deadUnits);
+        }
+    }
+    private void LeaveDeadUnit(Unit unit)
+    {
+        DeadUnit deadUnit = Instantiate(unit.DeadUnit, unit.transform.position, Quaternion.identity);
+        deadUnits.Add(deadUnit);
     }
     public void SquadMove(Vector2 targetPosition)
     {

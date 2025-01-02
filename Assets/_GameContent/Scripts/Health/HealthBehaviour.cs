@@ -40,6 +40,7 @@ public class HealthBehaviour : MonoBehaviour
     }
     public delegate void OnHealthChangeEvent(int currentHealth);
     public OnHealthChangeEvent OnHealthChange;
+    public OnHealthChangeEvent OnHealthEnd;
 
     public void SetIndex(int index)
     {
@@ -53,6 +54,7 @@ public class HealthBehaviour : MonoBehaviour
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
+                OnHealthEnd?.Invoke(0);
                 Death();
             }
             onGetDamage?.Invoke();

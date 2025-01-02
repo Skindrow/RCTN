@@ -21,6 +21,24 @@ public static class TargetFinder
         }
         return selectedTarget;
     }
+    public static HealthBehaviour GetTargetInRadius(int index, Transform ownTransform, float radius , bool excludeIndex)
+    {
+
+        HealthBehaviour selectedTarget = null;
+        float lastDistance = float.MaxValue;
+        for (int i = 0; i < HealthBehaviour.allHealthBehaviour.Count; i++)
+        {
+            if (HealthBehaviour.allHealthBehaviour[i].Index == index)
+                continue;
+            float distance = Vector2.Distance(HealthBehaviour.allHealthBehaviour[i].transform.position, ownTransform.position);
+            if (distance < lastDistance && distance < radius)
+            {
+                lastDistance = distance;
+                selectedTarget = HealthBehaviour.allHealthBehaviour[i];
+            }
+        }
+        return selectedTarget;
+    }
     public static HealthBehaviour GetNearestTarget(int index , Transform ownTransform)
     {
         HealthBehaviour selectedTarget = null;

@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class Attacker : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] protected UnityEvent onAttack;
+
+    public delegate void AttackStateEvent();
+    public AttackStateEvent OnAttackStart;
+    public AttackStateEvent OnAttackGo;
+
+    public virtual void Attack(HealthBehaviour target , int damage)
     {
-        
+        Debug.LogError("Attack not overrided in " + gameObject.name);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
