@@ -12,6 +12,7 @@ public class Squad : MonoBehaviour
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
+    private float leftBehindDistantion = 3f;
 
     private void Start()
     {
@@ -81,10 +82,25 @@ public class Squad : MonoBehaviour
     }
     public void SquadMove(Vector2 targetPosition)
     {
+        Vector3 squadCenter = CenterOfSquad();
         for (int i = 0; i < squadMembers.Count; i++)
         {
             squadMembers[i].MoveTo(targetPosition);
         }
+        for (int i = 0; i < squadMembers.Count; i++)
+        {
+            squadMembers[i].MoveToWithoutRotation(squadCenter, 0.3f);
+        }
+    }
+    private Vector3 CenterOfSquad()
+    {
+        Vector3 averageVector = Vector3.zero;
+        for (int i = 0; i < squadMembers.Count; i++)
+        {
+            averageVector += squadMembers[i].transform.position;
+        }
+        averageVector /= squadMembers.Count;
+        return averageVector;
     }
     public Unit MostCloseUnit(Vector2 position)
     {
@@ -99,6 +115,10 @@ public class Squad : MonoBehaviour
             }
         }
         return unit;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(CenterOfSquad(), 0.3f);
     }
 
 }

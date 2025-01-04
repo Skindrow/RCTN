@@ -508,7 +508,7 @@ MonoBehaviour:
   health: {fileID: 1384280262755186828}
   attacker: {fileID: 4404231924360121921}
   moveForce: 200
-  attractForce: 10
+  attractForce: 0.5
   fractionIndex: 0
   damage: 10
   detectRadius: 3

@@ -84,6 +84,26 @@ public class Unit : MonoBehaviour
     public UnitDetectEvent OnNoUnitDetect;
     public void MoveTo(Vector2 targetPosition)
     {
+        Rotation(targetPosition);
+        mover.MoveToPosition(targetPosition, moveForce);
+
+        onWalk?.Invoke();
+    }
+    public void MoveTo(Vector2 targetPosition, float multiplier)
+    {
+        Rotation(targetPosition);
+        mover.MoveToPosition(targetPosition, moveForce * multiplier);
+
+        onWalk?.Invoke();
+    }
+    public void MoveToWithoutRotation(Vector2 targetPosition, float multiplier)
+    {
+        mover.MoveToPosition(targetPosition, moveForce * multiplier);
+
+        onWalk?.Invoke();
+    }
+    private void Rotation(Vector2 targetPosition)
+    {
         if (rotatedTransform != null)
         {
             if (targetPosition.x > transform.position.x)
@@ -91,9 +111,6 @@ public class Unit : MonoBehaviour
             else if (targetPosition.x < transform.position.x)
                 rotatedTransform.eulerAngles = new Vector3(0, -180, 0);
         }
-        mover.MoveToPosition(targetPosition, moveForce);
-
-        onWalk?.Invoke();
     }
     private Coroutine attractCoroutine;
     private void StartAttract(HealthBehaviour target)
@@ -116,7 +133,7 @@ public class Unit : MonoBehaviour
         while (true)
         {
             if (currentTarget != null)
-                MoveTo(currentTarget.transform.position);
+                MoveTo(currentTarget.transform.position, attractForce);
             yield return new WaitForFixedUpdate();
         }
     }
