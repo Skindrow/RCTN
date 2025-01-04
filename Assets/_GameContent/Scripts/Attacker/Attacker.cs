@@ -8,7 +8,8 @@ public class Attacker : MonoBehaviour
 
     public delegate void AttackStateEvent();
     public AttackStateEvent OnAttackStart;
-    public AttackStateEvent OnAttackGo;
+    public AttackStateEvent OnAttackDo;
+    public AttackStateEvent OnAttackEnd;
 
     public virtual void Attack(HealthBehaviour target , int damage)
     {

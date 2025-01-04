@@ -3,14 +3,19 @@ using UnityEngine;
 public class UnitAnimator : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private string attackAnimationName;
-    [SerializeField] private string idleAnimationName;
-    [SerializeField] private string walkAnimationName;
-
 
     public void AttackAnimation()
     {
-        animator.Play(attackAnimationName);
+        animator.SetTrigger("Attack");
+    }
+    public void WalkAnimation()
+    {
+        animator.SetBool("IsWalk", true);
+    }
+
+    public void StopAnimation()
+    {
+        animator.SetBool("IsWalk", false);
     }
 
 }

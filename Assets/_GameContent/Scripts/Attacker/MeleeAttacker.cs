@@ -4,6 +4,7 @@ using UnityEngine;
 public class MeleeAttacker : Attacker
 {
     [SerializeField] private float animationAttackDelay;
+    [SerializeField] private float postAttackDelay;
     public override void Attack(HealthBehaviour target, int damage)
     {
         StartCoroutine(AttackDelay(target, damage));
@@ -17,10 +18,12 @@ public class MeleeAttacker : Attacker
             onAttack?.Invoke();
             isAttacked = true;
             yield return new WaitForSeconds(animationAttackDelay);
-            OnAttackGo?.Invoke();
+            OnAttackDo?.Invoke();
             if (target != null)
                 target.GetDamage(damage);
+            yield return new WaitForSeconds(postAttackDelay);
 
+            OnAttackEnd?.Invoke();
             isAttacked = false;
         }
     }

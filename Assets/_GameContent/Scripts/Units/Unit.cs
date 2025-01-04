@@ -17,6 +17,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private float attackRadius;
     [SerializeField] private float attackPerSecond;
     [SerializeField] private UnityEvent onWalk;
+    [SerializeField] private UnityEvent onStop;
     [SerializeField] private UnityEvent onPlayerUnit;
     [Header("Animation")]
     [SerializeField] private Transform rotatedTransform;
@@ -84,6 +85,7 @@ public class Unit : MonoBehaviour
     public UnitDetectEvent OnNoUnitDetect;
     public void MoveTo(Vector2 targetPosition)
     {
+        RestartStopWaiter();
         Rotation(targetPosition);
         mover.MoveToPosition(targetPosition, moveForce);
 
@@ -91,6 +93,7 @@ public class Unit : MonoBehaviour
     }
     public void MoveTo(Vector2 targetPosition, float multiplier)
     {
+        RestartStopWaiter();
         Rotation(targetPosition);
         mover.MoveToPosition(targetPosition, moveForce * multiplier);
 
@@ -98,9 +101,24 @@ public class Unit : MonoBehaviour
     }
     public void MoveToWithoutRotation(Vector2 targetPosition, float multiplier)
     {
+        RestartStopWaiter();
         mover.MoveToPosition(targetPosition, moveForce * multiplier);
 
         onWalk?.Invoke();
+    }
+    private Coroutine stopCoroutine;
+    private void RestartStopWaiter()
+    {
+        if (stopCoroutine != null)
+        {
+            StopCoroutine(stopCoroutine);
+        }
+        stopCoroutine = StartCoroutine(OnStopTimer());
+    }
+    private IEnumerator OnStopTimer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        onStop?.Invoke();
     }
     private void Rotation(Vector2 targetPosition)
     {

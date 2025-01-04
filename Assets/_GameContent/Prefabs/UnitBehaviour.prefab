@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: -1613267124163507987}
   - component: {fileID: 1384280262755186828}
   - component: {fileID: 4404231924360121921}
+  - component: {fileID: 6489629441986393392}
   m_Layer: 0
   m_Name: UnitBehaviour
   m_TagString: Untagged
@@ -517,16 +518,31 @@ MonoBehaviour:
   onWalk:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3540360135566469909}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 6489629441986393392}
+        m_TargetAssemblyTypeName: UnitAnimator, Assembly-CSharp
+        m_MethodName: WalkAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Walk
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onStop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6489629441986393392}
+        m_TargetAssemblyTypeName: UnitAnimator, Assembly-CSharp
+        m_MethodName: StopAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onPlayerUnit:
@@ -611,16 +627,30 @@ MonoBehaviour:
   onAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3540360135566469909}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 6489629441986393392}
+        m_TargetAssemblyTypeName: UnitAnimator, Assembly-CSharp
+        m_MethodName: AttackAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Attack
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   animationAttackDelay: 0.1
+  postAttackDelay: 0
+--- !u!114 &6489629441986393392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286123005686503012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997f2ce8c8c57464ab3171401fdf9baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3540360135566469909}
