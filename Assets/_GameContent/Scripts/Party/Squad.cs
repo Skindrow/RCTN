@@ -26,6 +26,12 @@ public class Squad : MonoBehaviour
     {
         OnSquadDead -= ReviveSquad;
     }
+    public delegate void SquadAttackEvent(HealthBehaviour unit);
+    public SquadAttackEvent OnSquadAttack;
+    private void SquadAttackTrigger(HealthBehaviour unit)
+    {
+        OnSquadAttack?.Invoke(unit);
+    }
     private void ReviveSquad(List<DeadUnit> squadDeadUnits)
     {
         for (int i = 0; i < squadDeadUnits.Count; i++)
@@ -50,9 +56,10 @@ public class Squad : MonoBehaviour
         if (!squadMembers.Contains(unit))
         {
             squadMembers.Add(unit);
-            unit.CurrentSquad = this;
-            unit.SetFraction(squadFraction);
         }
+        unit.OnUnitDetect += SquadAttackTrigger;
+        unit.CurrentSquad = this;
+        unit.SetFraction(squadFraction);
     }
     public delegate void SquadDead(List<DeadUnit> deadSquadList);
     public static SquadDead OnSquadDead;
@@ -64,6 +71,8 @@ public class Squad : MonoBehaviour
             {
                 LeaveDeadUnit(unit);
             }
+
+            unit.OnUnitDetect -= SquadAttackTrigger;
             squadMembers.Remove(unit);
         }
         if (isDeadUnitLeave && squadMembers.Count <= 0)
@@ -92,7 +101,7 @@ public class Squad : MonoBehaviour
             squadMembers[i].MoveToWithoutRotation(squadCenter, 0.3f);
         }
     }
-    private Vector3 CenterOfSquad()
+    public Vector3 CenterOfSquad()
     {
         Vector3 averageVector = Vector3.zero;
         for (int i = 0; i < squadMembers.Count; i++)

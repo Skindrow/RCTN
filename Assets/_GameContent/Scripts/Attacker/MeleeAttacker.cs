@@ -9,7 +9,6 @@ public class MeleeAttacker : Attacker
     {
         StartCoroutine(AttackDelay(target, damage));
     }
-    private bool isAttacked = false;
     private IEnumerator AttackDelay(HealthBehaviour target, int damage)
     {
         if (!isAttacked)

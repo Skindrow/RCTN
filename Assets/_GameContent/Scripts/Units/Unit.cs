@@ -52,6 +52,7 @@ public class Unit : MonoBehaviour
     public void SetFraction(int fraction)
     {
         fractionIndex = fraction;
+        health.SetIndex(fraction);
         if (fractionIndex == PLAYER_INDEX)
             onPlayerUnit?.Invoke();
     }
@@ -63,6 +64,7 @@ public class Unit : MonoBehaviour
             if (unitHealth != null)
             {
                 StartAttract(unitHealth);
+                OnUnitDetect?.Invoke(unitHealth);
             }
             else
             {
@@ -74,6 +76,8 @@ public class Unit : MonoBehaviour
                 if (currentTargetDistance <= attackRadius)
                 {
                     attacker.Attack(currentTarget, damage);
+                    OnUnitDetect?.Invoke(unitHealth);
+
                     yield return new WaitForSeconds(1.0f / attackPerSecond);
                 }
             }

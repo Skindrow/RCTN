@@ -11,7 +11,10 @@ public class Attacker : MonoBehaviour
     public AttackStateEvent OnAttackDo;
     public AttackStateEvent OnAttackEnd;
 
-    public virtual void Attack(HealthBehaviour target , int damage)
+    protected bool isAttacked = false;
+
+    public bool IsAttacking => isAttacked;
+    public virtual void Attack(HealthBehaviour target, int damage)
     {
         Debug.LogError("Attack not overrided in " + gameObject.name);
     }
