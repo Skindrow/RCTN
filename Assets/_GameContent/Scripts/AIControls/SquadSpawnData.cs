@@ -7,7 +7,7 @@ public class SquadSpawnData : ScriptableObject
     public UnitChances[] UnitsChances;
     public int MinCount;
     public int MaxCount;
-
+    public int secondsBeforeSwitch;
     public static List<Unit> GetUnits(SquadSpawnData data)
     {
         int rndCount = Random.Range(data.MinCount, data.MaxCount);

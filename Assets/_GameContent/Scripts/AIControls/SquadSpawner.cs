@@ -8,15 +8,23 @@ public class SquadSpawner : MonoBehaviour
     [SerializeField] private int maxSquads;
     [SerializeField] private float spawnTick;
     [SerializeField] private float spawnCheckTick;
-    [SerializeField] private SquadSpawnData spawnData;
+    [SerializeField] private SquadSpawnData[] spawnData;
     [SerializeField] private Vector3[] spawnPoints;
     private List<Squad> squads = new List<Squad>();
-
+    private int currentSpawnDataIndex = 0;
     private void Start()
     {
         StartCoroutine(SquadSpawn());
+        StartCoroutine(SquadDataSwitch());
     }
-
+    private IEnumerator SquadDataSwitch()
+    {
+        for (int i = 0; i < spawnData.Length; i++)
+        {
+            yield return new WaitForSeconds(spawnData[currentSpawnDataIndex].secondsBeforeSwitch);
+            currentSpawnDataIndex++;
+        }
+    }
     private IEnumerator SquadSpawn()
     {
         while (true)
@@ -46,7 +54,7 @@ public class SquadSpawner : MonoBehaviour
     }
     private SquadSpawnData GetSpawnData()
     {
-        return spawnData;
+        return spawnData[currentSpawnDataIndex];
     }
     private void SpawnUnits(Squad squad)
     {

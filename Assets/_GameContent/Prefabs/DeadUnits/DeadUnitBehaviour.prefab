@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd1a740eddf6d24f8be0c2a3748ece5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+  unit: {fileID: 1068037822798927680, guid: 225a2fb60e7ae4f4c9114dd5ccad2beb, type: 3}
   IsCanRevive: 0
 --- !u!1 &8119509833959926221
 GameObject:
@@ -72,13 +72,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8119509833959926221}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.39166078, y: 0.37316912, z: 0.58015645, w: 0.60890496}
-  m_LocalPosition: {x: 0, y: 0, z: 2.7202742}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5950173565979490725}
-  m_LocalEulerAnglesHint: {x: -65.5, y: 0, z: 87.23}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!212 &4196123827941474408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1465601158, guid: 37915aae5592c8344914bf72ba628aba, type: 3}
+  m_Sprite: {fileID: -4257883549834286267, guid: 0945ed366389a0d4b9a47eef60e21014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 7
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,10 +166,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -183,15 +183,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VeteranSwordsman_1
+      name: VeteranSwordsman_Dead
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 17
-        height: 16
+        x: 18
+        y: 8
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -204,55 +204,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: VeteranSwordsman_2
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6695b0d3bd721ac20800000000000000
-      internalID: 3215895431494719846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VeteranSwordsman_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 0
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 221c54f4ced559340800000000000000
-      internalID: 4869901841594695970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 63e30f33b4aa54941a599aa130e5cab2
     internalID: 0
     vertices: []
     indices: 
@@ -263,9 +219,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       VeteranSwordsman_0: -3415628887017064001
-      VeteranSwordsman_1: -4257883549834286267
       VeteranSwordsman_2: 3215895431494719846
       VeteranSwordsman_3: 4869901841594695970
+      VeteranSwordsman_Dead: -4257883549834286267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
