@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aec38721d2fd49f428a914affd5f940d, type: 3}
-  m_Name: 2
+  m_Name: 3
   m_EditorClassIdentifier: 
   UnitsChances:
   - UnitPref: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
-    ChanceOfSpawn: 2
+    ChanceOfSpawn: 1
   - UnitPref: {fileID: 9030328783184243217, guid: db57f294a60f6aa40b9cdddf297db126, type: 3}
     ChanceOfSpawn: 1
+  - UnitPref: {fileID: 1068037822798927680, guid: 23e9ee8ad90fc064a9a5d3fa284e7933, type: 3}
+    ChanceOfSpawn: 1
   MinCount: 1
-  MaxCount: 10
-  secondsBeforeSwitch: 60
+  MaxCount: 15
+  secondsBeforeSwitch: 5000
