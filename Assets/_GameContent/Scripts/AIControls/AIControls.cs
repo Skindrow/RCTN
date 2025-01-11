@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class AIControls : MonoBehaviour
 {
@@ -49,7 +48,8 @@ public class AIControls : MonoBehaviour
         float estimatedTime = Time.time + time;
         while (estimatedTime > Time.time)
         {
-            squad.SquadMove(pos);
+            if (Vector2.Distance(squad.CenterOfSquad(), pos) > 1f)
+                squad.SquadMove(pos);
             yield return new WaitForFixedUpdate();
         }
         StartMove();

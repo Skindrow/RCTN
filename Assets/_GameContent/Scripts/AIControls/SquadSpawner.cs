@@ -25,6 +25,7 @@ public class SquadSpawner : MonoBehaviour
             {
                 Squad squadGO = Instantiate(squadPrefab, SpawnZone(), Quaternion.identity);
                 SpawnUnits(squadGO);
+                squadGO.OnSquadDeath += DeleteSquad;
                 squads.Add(squadGO);
                 yield return new WaitForSeconds(spawnTick);
             }
@@ -32,6 +33,15 @@ public class SquadSpawner : MonoBehaviour
             {
                 yield return new WaitForSeconds(spawnCheckTick);
             }
+        }
+    }
+    private void DeleteSquad(Squad squad)
+    {
+        if (squads.Contains(squad))
+        {
+            squads.Remove(squad);
+            squad.OnSquadDeath -= DeleteSquad;
+            Destroy(squad.gameObject);
         }
     }
     private SquadSpawnData GetSpawnData()

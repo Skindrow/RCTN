@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +10,9 @@ public class Unit : MonoBehaviour
     [SerializeField] private PhysicMover mover;
     [SerializeField] private HealthBehaviour health;
     [SerializeField] private Attacker attacker;
-    [SerializeField] private float moveForce;
-    [SerializeField] private float attractForce;
+    [SerializeField] private float startMoveForce;
+    [SerializeField] private float attackMoveMultiplier;
+    [SerializeField] private float attractMultiplier;
     [SerializeField] private int fractionIndex;
     [SerializeField] private int damage;
     [SerializeField] private float detectRadius;
@@ -32,18 +34,27 @@ public class Unit : MonoBehaviour
     public int FractionIndex => fractionIndex;
     public Squad CurrentSquad;
 
+    private float moveForce;
     private const int PLAYER_INDEX = 0;
 
     private void Start()
     {
+        moveForce = startMoveForce;
         StartCoroutine(TargetFindFlow());
         health.OnHealthEnd += OnDeath;
         if (fractionIndex == PLAYER_INDEX)
             onPlayerUnit?.Invoke();
+
+        attacker.OnAttackStart += MoveDescreaseOnAttack;
+        attacker.OnAttackEnd += MoveSetStandart;
     }
     private void OnDestroy()
     {
         health.OnHealthEnd -= OnDeath;
+
+
+        attacker.OnAttackStart -= MoveDescreaseOnAttack;
+        attacker.OnAttackEnd -= MoveSetStandart;
     }
     private void OnDeath(int forDelegate)
     {
@@ -86,29 +97,26 @@ public class Unit : MonoBehaviour
     }
     public delegate void UnitDetectEvent(HealthBehaviour unitHealth);
     public UnitDetectEvent OnUnitDetect;
-    public UnitDetectEvent OnNoUnitDetect;
     public void MoveTo(Vector2 targetPosition)
     {
         RestartStopWaiter();
-        Rotation(targetPosition);
         mover.MoveToPosition(targetPosition, moveForce);
 
+        Rotation(targetPosition);
         onWalk?.Invoke();
     }
     public void MoveTo(Vector2 targetPosition, float multiplier)
     {
         RestartStopWaiter();
-        Rotation(targetPosition);
         mover.MoveToPosition(targetPosition, moveForce * multiplier);
 
+        Rotation(targetPosition);
         onWalk?.Invoke();
     }
-    public void MoveToWithoutRotation(Vector2 targetPosition, float multiplier)
+    public void Attract(Vector2 targetPosition, float multiplier)
     {
-        RestartStopWaiter();
         mover.MoveToPosition(targetPosition, moveForce * multiplier);
 
-        onWalk?.Invoke();
     }
     private Coroutine stopCoroutine;
     private void RestartStopWaiter()
@@ -124,16 +132,15 @@ public class Unit : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         onStop?.Invoke();
     }
-    private void Rotation(Vector2 targetPosition)
+    private void MoveDescreaseOnAttack()
     {
-        if (rotatedTransform != null)
-        {
-            if (targetPosition.x > transform.position.x)
-                rotatedTransform.eulerAngles = new Vector3(0, 0, 0);
-            else if (targetPosition.x < transform.position.x)
-                rotatedTransform.eulerAngles = new Vector3(0, -180, 0);
-        }
+        moveForce *= attackMoveMultiplier;
     }
+    private void MoveSetStandart()
+    {
+        moveForce = startMoveForce;
+    }
+    #region Attract
     private Coroutine attractCoroutine;
     private void StartAttract(HealthBehaviour target)
     {
@@ -150,16 +157,27 @@ public class Unit : MonoBehaviour
         }
         currentTarget = null;
     }
+    #endregion
     private IEnumerator Attract()
     {
         while (true)
         {
             if (currentTarget != null)
-                MoveTo(currentTarget.transform.position, attractForce);
+                Attract(currentTarget.transform.position, attractMultiplier);
             yield return new WaitForFixedUpdate();
         }
     }
 
+    private void Rotation(Vector2 targetPosition)
+    {
+        if (rotatedTransform != null)
+        {
+            if (targetPosition.x > transform.position.x)
+                rotatedTransform.eulerAngles = new Vector3(0, 0, 0);
+            else if (targetPosition.x < transform.position.x)
+                rotatedTransform.eulerAngles = new Vector3(0, -180, 0);
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

@@ -49,6 +49,7 @@ MonoBehaviour:
   startSquadMemders: []
   isDeadUnitLeave: 1
   isCanRevive: 0
+  attractToCenterMultiplier: 0.1
 --- !u!114 &4954885908723111829
 MonoBehaviour:
   m_ObjectHideFlags: 0

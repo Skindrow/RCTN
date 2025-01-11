@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class UnitAnimator : MonoBehaviour
 {
+    [SerializeField] private Unit unit;
     [SerializeField] private Animator animator;
-
+    [SerializeField] private Transform rotatedTransform;
+    [SerializeField] private float walkAnimationThreshold;
     public void AttackAnimation()
     {
         animator.SetTrigger("Attack");
@@ -17,5 +19,6 @@ public class UnitAnimator : MonoBehaviour
     {
         animator.SetBool("IsWalk", false);
     }
+
 
 }

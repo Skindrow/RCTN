@@ -440,7 +440,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f7b7ebb32e7fa66458b454f10352a977, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -482,7 +482,7 @@ Rigidbody2D:
   m_LinearDamping: 50
   m_AngularDamping: 2
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f7b7ebb32e7fa66458b454f10352a977, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -509,12 +509,13 @@ MonoBehaviour:
   mover: {fileID: -1613267124163507987}
   health: {fileID: 1384280262755186828}
   attacker: {fileID: 4404231924360121921}
-  moveForce: 200
-  attractForce: 0.5
+  startMoveForce: 200
+  attackMoveMultiplier: 0
+  attractMultiplier: 0.1
   fractionIndex: 0
   damage: 10
-  detectRadius: 3
-  attackRadius: 2
+  detectRadius: 2
+  attackRadius: 1.5
   attackPerSecond: 1
   onWalk:
     m_PersistentCalls:
@@ -641,7 +642,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   animationAttackDelay: 0.1
-  postAttackDelay: 0
+  postAttackDelay: 0.5
 --- !u!114 &6489629441986393392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,4 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997f2ce8c8c57464ab3171401fdf9baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unit: {fileID: 0}
   animator: {fileID: 3540360135566469909}
+  rotatedTransform: {fileID: 0}
+  walkAnimationThreshold: 0

@@ -9,6 +9,7 @@ public class Squad : MonoBehaviour
     [SerializeField] private List<Unit> startSquadMemders = new List<Unit>();
     [SerializeField] private bool isDeadUnitLeave;
     [SerializeField] private bool isCanRevive;
+    [SerializeField] private float attractToCenterMultiplier;
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
@@ -19,12 +20,15 @@ public class Squad : MonoBehaviour
         InitializeStartUnits();
         if (isCanRevive)
         {
-            OnSquadDead += ReviveSquad;
+            OnLeaveDeadBodies += ReviveSquad;
         }
     }
     private void OnDestroy()
     {
-        OnSquadDead -= ReviveSquad;
+        if (isCanRevive)
+        {
+            OnLeaveDeadBodies -= ReviveSquad;
+        }
     }
     public delegate void SquadAttackEvent(HealthBehaviour unit);
     public SquadAttackEvent OnSquadAttack;
@@ -56,13 +60,18 @@ public class Squad : MonoBehaviour
         if (!squadMembers.Contains(unit))
         {
             squadMembers.Add(unit);
+            unit.transform.parent = transform;
         }
         unit.OnUnitDetect += SquadAttackTrigger;
         unit.CurrentSquad = this;
         unit.SetFraction(squadFraction);
     }
-    public delegate void SquadDead(List<DeadUnit> deadSquadList);
-    public static SquadDead OnSquadDead;
+    public delegate void LeaveDeadBodiesEvent(List<DeadUnit> deadSquadList);
+    public static LeaveDeadBodiesEvent OnLeaveDeadBodies;
+
+
+    public delegate void SquadDeathEvent(Squad thisSquad);
+    public SquadDeathEvent OnSquadDeath;
     public void RemoveUnit(Unit unit)
     {
         if (squadMembers.Contains(unit))
@@ -81,7 +90,12 @@ public class Squad : MonoBehaviour
             {
                 deadUnits[i].IsCanRevive = true;
             }
-            OnSquadDead?.Invoke(deadUnits);
+            OnLeaveDeadBodies?.Invoke(deadUnits);
+            OnSquadDeath?.Invoke(this);
+        }
+        else if (squadMembers.Count <= 0)
+        {
+            OnSquadDeath?.Invoke(this);
         }
     }
     private void LeaveDeadUnit(Unit unit)
@@ -98,7 +112,7 @@ public class Squad : MonoBehaviour
         }
         for (int i = 0; i < squadMembers.Count; i++)
         {
-            squadMembers[i].MoveToWithoutRotation(squadCenter, 0.3f);
+            squadMembers[i].Attract(squadCenter, attractToCenterMultiplier);
         }
     }
     public Vector3 CenterOfSquad()

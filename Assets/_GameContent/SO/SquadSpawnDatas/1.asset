@@ -18,4 +18,4 @@ MonoBehaviour:
   - UnitPref: {fileID: 8767746503009672494, guid: 8ea3da5bf93b42b46bbeea3881ef7a9d, type: 3}
     ChanceOfSpawn: 1
   MinCount: 1
-  MaxCount: 10
+  MaxCount: 2
