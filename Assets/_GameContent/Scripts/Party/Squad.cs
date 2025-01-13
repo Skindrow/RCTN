@@ -12,7 +12,6 @@ public class Squad : MonoBehaviour
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
-    private float leftBehindDistantion = 3f;
 
     private void Start()
     {
