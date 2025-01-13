@@ -9,6 +9,7 @@ public class SquadSpawner : MonoBehaviour
     [SerializeField] private float spawnTick;
     [SerializeField] private float spawnCheckTick;
     [SerializeField] private SquadSpawnData[] spawnData;
+    [SerializeField] private SquadSpawnData[] loopSpawnData;
     [SerializeField] private Vector3[] spawnPoints;
     private List<Squad> squads = new List<Squad>();
     private int currentSpawnDataIndex = 0;
@@ -54,7 +55,19 @@ public class SquadSpawner : MonoBehaviour
     }
     private SquadSpawnData GetSpawnData()
     {
-        return spawnData[currentSpawnDataIndex];
+        if (currentSpawnDataIndex <= spawnData.Length)
+        {
+            return spawnData[currentSpawnDataIndex];
+        }
+        else
+        {
+            int currentLoopData = currentSpawnDataIndex - spawnData.Length;
+            if (currentLoopData <= loopSpawnData.Length)
+            {
+                currentLoopData = currentLoopData % loopSpawnData.Length;
+            }
+            return spawnData[currentLoopData];
+        }
     }
     private void SpawnUnits(Squad squad)
     {

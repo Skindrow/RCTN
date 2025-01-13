@@ -584,7 +584,6 @@ MonoBehaviour:
   - {fileID: 1947890883}
   - {fileID: 518655081}
   isDeadUnitLeave: 1
-  isCanRevive: 0
   attractToCenterMultiplier: 0
 --- !u!4 &469309617
 Transform:
@@ -944,6 +943,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6cb006c701be4c34a89cc77c0c3dfdb2, type: 2}
   - {fileID: 11400000, guid: dd59316b2076d8444937a69360f68287, type: 2}
   - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
+  loopSpawnData: []
   spawnPoints:
   - {x: -30, y: 0, z: 0}
   - {x: 30, y: 0, z: 0}
@@ -1149,7 +1149,6 @@ MonoBehaviour:
   - {fileID: 177087817}
   - {fileID: 848973434}
   isDeadUnitLeave: 1
-  isCanRevive: 0
   attractToCenterMultiplier: 0
 --- !u!4 &785116322
 Transform:
@@ -1522,6 +1521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986518082}
   - component: {fileID: 986518083}
+  - component: {fileID: 986518084}
   m_Layer: 0
   m_Name: PlayerSquad
   m_TagString: Untagged
@@ -1569,8 +1569,21 @@ MonoBehaviour:
   - {fileID: 1986182065}
   - {fileID: 1900665410}
   isDeadUnitLeave: 0
-  isCanRevive: 1
   attractToCenterMultiplier: 0.1
+--- !u!114 &986518084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986518081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff4133f485bd1d439d7a6522a602307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxRevive: {fileID: 4856289618402057658, guid: ca340e45a73e3dd42bd6530683ea4a0e, type: 3}
+  fxAppear: {fileID: 8749643920902237973, guid: a11366e0345daa44da4e7a2a3b822acb, type: 3}
 --- !u!1001 &1121167616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1876,7 +1889,6 @@ MonoBehaviour:
   - {fileID: 1121167617}
   - {fileID: 579628202}
   isDeadUnitLeave: 1
-  isCanRevive: 0
   attractToCenterMultiplier: 0
 --- !u!4 &1622401856
 Transform:

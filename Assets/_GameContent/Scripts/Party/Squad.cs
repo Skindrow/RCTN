@@ -8,7 +8,6 @@ public class Squad : MonoBehaviour
     [SerializeField] private int squadFraction;
     [SerializeField] private List<Unit> startSquadMemders = new List<Unit>();
     [SerializeField] private bool isDeadUnitLeave;
-    [SerializeField] private bool isCanRevive;
     [SerializeField] private float attractToCenterMultiplier;
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
@@ -18,35 +17,12 @@ public class Squad : MonoBehaviour
     private void Start()
     {
         InitializeStartUnits();
-        if (isCanRevive)
-        {
-            OnLeaveDeadBodies += ReviveSquad;
-        }
-    }
-    private void OnDestroy()
-    {
-        if (isCanRevive)
-        {
-            OnLeaveDeadBodies -= ReviveSquad;
-        }
     }
     public delegate void SquadAttackEvent(HealthBehaviour unit);
     public SquadAttackEvent OnSquadAttack;
     private void SquadAttackTrigger(HealthBehaviour unit)
     {
         OnSquadAttack?.Invoke(unit);
-    }
-    private void ReviveSquad(List<DeadUnit> squadDeadUnits)
-    {
-        for (int i = 0; i < squadDeadUnits.Count; i++)
-        {
-            Unit reviveUnit = squadDeadUnits[i].ReviveUnit();
-            AddUnit(reviveUnit);
-        }
-        for (int i = 0; i < squadDeadUnits.Count; i++)
-        {
-            squadDeadUnits[i].BodyDestroy();
-        }
     }
     private void InitializeStartUnits()
     {
