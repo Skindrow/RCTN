@@ -89,7 +89,10 @@ public class Unit : MonoBehaviour
                     attacker.Attack(currentTarget, damage);
                     OnUnitDetect?.Invoke(unitHealth);
 
-                    yield return new WaitForSeconds(1.0f / attackPerSecond);
+                    while (attacker.IsAttacking)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
                 }
             }
             yield return new WaitForSeconds(detectTick);

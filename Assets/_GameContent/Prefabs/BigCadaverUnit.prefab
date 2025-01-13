@@ -76,18 +76,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3540360135566469909, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a61da362862eb4e4dbc5578033e9bc46, type: 2}
     - target: {fileID: 7457126836893317470, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2217743743108310589, guid: 8c588727b41585d41af7d9d48a8703cf, type: 3}
+      objectReference: {fileID: 130651531808425925, guid: 13940be86eb4191429ef8046cba6f1d4, type: 3}
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
-      value: Zombie
+      value: BigCadaverUnit
       objectReference: {fileID: 0}
     - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: damage
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: attacker
+      value: 
+      objectReference: {fileID: 7274902382284655416}
     - target: {fileID: 8767746503009672494, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: attackRadius
       value: 2
@@ -100,8 +108,59 @@ PrefabInstance:
       propertyPath: attackPerSecond
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4404231924360121921, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7274902382284655416}
   m_SourcePrefab: {fileID: 100100000, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+--- !u!114 &6841158372746445327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6489629441986393392, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+  m_PrefabInstance: {fileID: 360119552949761855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8503181112394965339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997f2ce8c8c57464ab3171401fdf9baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8503181112394965339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+  m_PrefabInstance: {fileID: 360119552949761855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7274902382284655416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8503181112394965339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482058f7b571fe6458324c8fb94bdcc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6841158372746445327}
+        m_TargetAssemblyTypeName: UnitAnimator, Assembly-CSharp
+        m_MethodName: AttackAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  aoeDamagerPref: {fileID: 8897961162694328528, guid: 8611bda5ecbadf64ea237556dae24f7a, type: 3}
+  aoeFX: {fileID: 772758151337195258, guid: f90950205b4782d488a2f1872b58d64a, type: 3}
+  animationAttackDelay: 0.3
+  postAttackDelay: 1

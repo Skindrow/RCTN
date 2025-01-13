@@ -23,7 +23,7 @@ public class RangeAttacker : Attacker
             if (target != null)
             {
                 Projectile projectileGO = Instantiate(projectile, shootingTransform.position, Quaternion.identity);
-                Vector2 direction = target.transform.position - transform.position;
+                Vector2 direction = target.transform.position - shootingTransform.position;
                 projectileGO.SetProjectile(direction.normalized, damage, target.Index);
             }
             yield return new WaitForSeconds(postAttackDelay);
