@@ -21,6 +21,17 @@ public class SaveSystem : MonoBehaviour
             dts[key] = count.ToString();
         SaveDTS();
     }
+    public static void SaveFloat(string key, float count)
+    {
+        if (dts == null)
+            LoadDTS();
+
+        if (!dts.ContainsKey(key))
+            dts.Add(key, count.ToString());
+        else
+            dts[key] = count.ToString();
+        SaveDTS();
+    }
 
     public static void Save(string key, string value)
     {
@@ -34,6 +45,16 @@ public class SaveSystem : MonoBehaviour
         SaveDTS();
     }
 
+    public static float LoadFloat(string key)
+    {
+        if (dts == null)
+            LoadDTS();
+
+        if (!dts.ContainsKey(key))
+            return 0.0f;
+        else
+            return float.Parse(dts[key]);
+    }
     public static int LoadInt(string key)
     {
         if (dts == null)
