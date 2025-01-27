@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1916631512777401628, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.076
+      objectReference: {fileID: 0}
     - target: {fileID: 3540360135566469909, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -83,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 7457126836893317470, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 130651531808425925, guid: 13940be86eb4191429ef8046cba6f1d4, type: 3}
+      objectReference: {fileID: 7889343815476202968, guid: d475b5182612a5f4398fbc1ad4527f0a, type: 3}
     - target: {fileID: 8286123005686503012, guid: 1aa5c590970178c42b2e5e17bee1518c, type: 3}
       propertyPath: m_Name
       value: BigCadaverUnit

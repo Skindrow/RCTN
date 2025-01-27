@@ -21,7 +21,8 @@ public class StatsHolder : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private Stat[] stats;
+    private Stat[] stats;
+    [SerializeField] private StatData[] allStatData;
 
     private void Start()
     {
@@ -29,32 +30,48 @@ public class StatsHolder : MonoBehaviour
     }
     private void InitializeStats()
     {
+        stats = new Stat[allStatData.Length];
         for (int i = 0; i < stats.Length; i++)
         {
+            stats[i] = new Stat(allStatData[i]);
             stats[i].LoadStat();
         }
     }
-    public void ChangeStat(string statName, float add)
+    public void ChangeStat(string statPref, float add)
     {
         for (int i = 0; i < stats.Length; i++)
         {
-            if (stats[i].StatName == statName)
+            if (stats[i].StatData.StatPref == statPref)
             {
                 stats[i].AddStat(add);
             }
         }
     }
+    public float GetValue(string statPref)
+    {
+        for (int i = 0; i < stats.Length; i++)
+        {
+            if (stats[i].StatData.StatPref == statPref)
+            {
+                return stats[i].CurrentValue;
+            }
+        }
+        return 0f;
+    }
 }
 [System.Serializable]
 public class Stat
 {
-    public string StatName;
-    public float DefaultValue;
+    public StatData StatData;
 
     private float currentValue;
 
     public float CurrentValue => currentValue;
 
+    public Stat(StatData data)
+    {
+        StatData = data;
+    }
     public void SetStat(float currentValue)
     {
         this.currentValue = currentValue;
@@ -67,17 +84,17 @@ public class Stat
     }
     public void SaveStat()
     {
-        SaveSystem.SaveFloat(StatName, currentValue);
+        SaveSystem.SaveFloat(StatData.StatPref, currentValue);
     }
     public void LoadStat()
     {
-        if (SaveSystem.HasKey(StatName))
+        if (SaveSystem.HasKey(StatData.StatPref))
         {
-            currentValue = SaveSystem.LoadFloat(StatName);
+            currentValue = SaveSystem.LoadFloat(StatData.StatPref);
         }
         else
         {
-            SetStat(DefaultValue);
+            SetStat(StatData.DefaultValue);
         }
     }
 }

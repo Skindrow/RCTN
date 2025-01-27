@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e811f07868e78149bc1b00d92ec0267, type: 3}
+  m_Name: HP
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  StatData: {fileID: 11400000, guid: 82e6bae3143127d4daf43617c8da1b2e, type: 2}
+  StatAdd: 0.1
+  Describe:
+    m_TableReference:
+      m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
+    m_TableEntryReference:
+      m_KeyId: 52811800576
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
