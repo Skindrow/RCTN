@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e811f07868e78149bc1b00d92ec0267, type: 3}
   m_Name: HP
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -5815451758216942445, guid: bc38d8dd614e2f043b2bf9c41cc2614b, type: 3}
   StatData: {fileID: 11400000, guid: 82e6bae3143127d4daf43617c8da1b2e, type: 2}
   StatAdd: 0.1
   Describe:

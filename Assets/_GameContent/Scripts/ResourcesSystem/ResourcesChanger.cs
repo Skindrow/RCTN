@@ -6,8 +6,6 @@ using UnityEngine.Events;
 public class ResourcesChanger : MonoBehaviour
 {
     [SerializeField] private Resource[] resources;
-    [SerializeField] private UnityEvent onChange;
-    [SerializeField] private UnityEvent onNotEnough;
     public delegate void ChangeEvent(int delta);
     public ChangeEvent OnChange;
     public void SetResources(Resource resource)
@@ -22,18 +20,18 @@ public class ResourcesChanger : MonoBehaviour
     {
         for (int i = 0; i < resources.Length; i++)
         {
-            if (!ResourcesManager.Instance.IsCanSpendResource(resources[i].Type, resources[i].Amount))
+            if (!ResourcesManager.Instance.IsCanSpendResource(resources[i].Data, resources[i].Amount))
             {
                 return false;
             }
         }
         return true;
     }
-    public void ResuorceSpend()
+    public void ResourceSpend()
     {
         for (int i = 0; i < resources.Length; i++)
         {
-            ResourcesManager.Instance.SpendResource(resources[i].Type, resources[i].Amount);
+            ResourcesManager.Instance.SpendResource(resources[i].Data, resources[i].Amount);
             OnChange?.Invoke(-resources[i].Amount);
         }
     }
@@ -41,7 +39,21 @@ public class ResourcesChanger : MonoBehaviour
     {
         for (int i = 0; i < resources.Length; i++)
         {
-            ResourcesManager.Instance.AddResource(resources[i].Type, resources[i].Amount);
+            ResourcesManager.Instance.AddResource(resources[i].Data, resources[i].Amount);
+            OnChange?.Invoke(resources[i].Amount);
+        }
+    }
+    public void ResourceAddWithLimit(int limit)
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            int currentCount = ResourcesManager.Instance.GetResourceAmount(resources[i].Data) + resources[i].Amount;
+            int addedCount = resources[i].Amount;
+            if (currentCount > limit)
+            {
+                addedCount = limit - ResourcesManager.Instance.GetResourceAmount(resources[i].Data);
+            }
+            ResourcesManager.Instance.AddResource(resources[i].Data, addedCount);
             OnChange?.Invoke(resources[i].Amount);
         }
     }

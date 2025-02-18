@@ -11,6 +11,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] private float invoulTime;
     [SerializeField] private bool isDestroyedOnDeath = true;
     [SerializeField] private int index;
+    [SerializeField] private StatData healthStat;
     private bool isInvoul = false;
     public int MaxHealth
     {
@@ -28,6 +29,13 @@ public class HealthBehaviour : MonoBehaviour
     public int CurrentHealth { get; private set; }
     private void Start()
     {
+        if (healthStat != null)
+        {
+            float multiplayer = healthStat.GetStat();
+            maxHealth = (int)(maxHealth * multiplayer);
+        }
+
+
         CurrentHealth = maxHealth;
     }
     private void OnEnable()

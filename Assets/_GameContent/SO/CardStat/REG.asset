@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e811f07868e78149bc1b00d92ec0267, type: 3}
   m_Name: REG
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 4336379813256568934, guid: 74d592da438e11f4fa980d67ca98b845, type: 3}
   StatData: {fileID: 11400000, guid: c48406e3b059c5d4c9575b9c052ac7aa, type: 2}
   StatAdd: 0.1
   Describe:

@@ -26,7 +26,7 @@ public class ResourcesManager : MonoBehaviour
 
     public List<Resource> resources = new List<Resource>();
 
-    public delegate void ResourceChangeEvent(Resource.ResourcesType type, int current);
+    public delegate void ResourceChangeEvent(ResourceData data, int current);
     public ResourceChangeEvent OnResourceChange;
 
     private string pref = "Resource";
@@ -36,18 +36,18 @@ public class ResourcesManager : MonoBehaviour
         for (int i = 0; i < resources.Count; i++)
         {
             resources[i].Amount = LoadResource(resources[i]);
-            OnResourceChange?.Invoke(resources[i].Type, resources[i].Amount);
+            OnResourceChange?.Invoke(resources[i].Data, resources[i].Amount);
         }
     }
 
     private void SaveResource(Resource res)
     {
-        string modPref = pref + res.Type.ToString();
-        SaveSystem.SaveInt(modPref, GetResourceAmount(res.Type));
+        string modPref = pref + res.Data.name.ToString();
+        SaveSystem.SaveInt(modPref, GetResourceAmount(res.Data));
     }
     private int LoadResource(Resource res)
     {
-        string modPref = pref + res.Type.ToString();
+        string modPref = pref + res.Data.name.ToString();
         if (SaveSystem.HasKey(modPref))
         {
             return SaveSystem.LoadInt(modPref);
@@ -59,23 +59,23 @@ public class ResourcesManager : MonoBehaviour
         }
     }
 
-    public void AddResource(Resource.ResourcesType type, int amount)
+    public void AddResource(ResourceData data, int amount)
     {
-        Resource resource = resources.Find(r => r.Type == type);
+        Resource resource = resources.Find(r => r.Data == data);
         if (resource != null)
         {
             resource.AddAmount(amount);
         }
         else
         {
-            resources.Add(new Resource(type, amount));
+            resources.Add(new Resource(data, amount));
         }
         SaveResource(resource);
-        OnResourceChange?.Invoke(type, GetResourceAmount(type));
+        OnResourceChange?.Invoke(data, GetResourceAmount(data));
     }
-    public void SpendResource(Resource.ResourcesType type, int amount)
+    public void SpendResource(ResourceData data, int amount)
     {
-        Resource resource = resources.Find(r => r.Type == type);
+        Resource resource = resources.Find(r => r.Data == data);
         if (resource != null)
         {
             resource.SpendAmount(amount);
@@ -83,14 +83,14 @@ public class ResourcesManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError(type.ToString() + "resource not found for spend");
+            Debug.LogError(data.ToString() + "resource not found for spend");
         }
-        OnResourceChange?.Invoke(type, GetResourceAmount(type));
+        OnResourceChange?.Invoke(data, GetResourceAmount(data));
     }
 
-    public bool IsCanSpendResource(Resource.ResourcesType type, int amount)
+    public bool IsCanSpendResource(ResourceData data, int amount)
     {
-        Resource resource = resources.Find(r => r.Type == type);
+        Resource resource = resources.Find(r => r.Data == data);
         if (resource != null)
         {
             return resource.IsCanSpendAmount(amount);
@@ -98,9 +98,9 @@ public class ResourcesManager : MonoBehaviour
         return false;
     }
 
-    public int GetResourceAmount(Resource.ResourcesType type)
+    public int GetResourceAmount(ResourceData data)
     {
-        Resource resource = resources.Find(r => r.Type == type);
+        Resource resource = resources.Find(r => r.Data == data);
         return resource != null ? resource.Amount : 0;
     }
 }

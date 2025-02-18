@@ -5,7 +5,7 @@ using TMPro;
 
 public class RandomChanger : MonoBehaviour
 {
-    [SerializeField] private Resource.ResourcesType type;
+    [SerializeField] private ResourceData data;
     [SerializeField] private int minAmount;
     [SerializeField] private int maxAmount;
     [SerializeField] private TextMeshProUGUI randomText;
@@ -18,6 +18,6 @@ public class RandomChanger : MonoBehaviour
     }
     public void AddResources()
     {
-        ResourcesManager.Instance.AddResource(type, rnd);
+        ResourcesManager.Instance.AddResource(data, rnd);
     }
 }

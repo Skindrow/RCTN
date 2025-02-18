@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e811f07868e78149bc1b00d92ec0267, type: 3}
   m_Name: ATK_Speed
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -8700242852832365267, guid: 59277d0a3225b5047ade9a28e550e755, type: 3}
   StatData: {fileID: 11400000, guid: 881853685d30c8e48b3a17cab3698a42, type: 2}
   StatAdd: 0.1
   Describe:

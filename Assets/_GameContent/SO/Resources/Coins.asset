@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cc43ae05f09a742b4d211b2e7e2265, type: 3}
+  m_Name: Coins
+  m_EditorClassIdentifier: 
+  Icon: {fileID: -6127626571061916938, guid: 2dc02efcb116a1f44b1b128d2ed0f91e, type: 3}
+  Pref: Coins
+  Name:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

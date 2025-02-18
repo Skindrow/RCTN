@@ -3,19 +3,12 @@ using UnityEngine;
 [Serializable]
 public class Resource
 {
-    public ResourcesType Type;
-    public Sprite ResourceSprite;
+    public ResourceData Data;
     public int Amount;
 
-    public enum ResourcesType
+    public Resource(ResourceData data, int amount)
     {
-        Coins,
-        Energy,
-        Keys
-    }
-    public Resource(ResourcesType type, int amount)
-    {
-        this.Type = type;
+        this.Data = data;
         this.Amount = amount;
     }
 

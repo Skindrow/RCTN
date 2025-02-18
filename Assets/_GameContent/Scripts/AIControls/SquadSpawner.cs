@@ -5,16 +5,24 @@ using UnityEngine;
 public class SquadSpawner : MonoBehaviour
 {
     [SerializeField] private Squad squadPrefab;
+    [SerializeField] private Squad playerSquadOnScene;
     [SerializeField] private int maxSquads;
     [SerializeField] private float spawnTick;
     [SerializeField] private float spawnCheckTick;
-    [SerializeField] private SquadSpawnData[] spawnData;
-    [SerializeField] private SquadSpawnData[] loopSpawnData;
     [SerializeField] private Vector3[] spawnPoints;
+
+    private SquadSpawnData playerSqaudData;
+    private SquadSpawnData[] spawnData;
+    private SquadSpawnData[] loopSpawnData;
     private List<Squad> squads = new List<Squad>();
     private int currentSpawnDataIndex = 0;
-    private void Start()
+
+    public void SetSquads(SquadSpawnData[] squadDatas, SquadSpawnData[] loopSquadDatas, SquadSpawnData playerSquadData)
     {
+        this.playerSqaudData = playerSquadData;
+        spawnData = squadDatas;
+        loopSpawnData = loopSquadDatas;
+        SpawnPlayerUnits();
         StartCoroutine(SquadSpawn());
         StartCoroutine(SquadDataSwitch());
     }
@@ -67,6 +75,17 @@ public class SquadSpawner : MonoBehaviour
                 currentLoopData = currentLoopData % loopSpawnData.Length;
             }
             return spawnData[currentLoopData];
+        }
+    }
+    private void SpawnPlayerUnits()
+    {
+        SquadSpawnData currentSpawnData = playerSqaudData;
+        List<Unit> unitPrefs = SquadSpawnData.GetUnits(currentSpawnData);
+        for (int i = 0; i < unitPrefs.Count; i++)
+        {
+            Unit unit = Instantiate(unitPrefs[i], playerSquadOnScene.transform);
+            unit.transform.localPosition = Vector2.zero + UnitRndSpawnPos();
+            playerSquadOnScene.AddUnit(unit);
         }
     }
     private void SpawnUnits(Squad squad)

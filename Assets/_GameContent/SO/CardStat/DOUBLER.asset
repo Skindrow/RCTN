@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e811f07868e78149bc1b00d92ec0267, type: 3}
   m_Name: DOUBLER
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -4701831623884617143, guid: 449139823d1941d4ab756294b00394b8, type: 3}
   StatData: {fileID: 11400000, guid: 3a2f50cfa6e3f4142a6755330f9cc961, type: 2}
   StatAdd: 0.1
   Describe:
