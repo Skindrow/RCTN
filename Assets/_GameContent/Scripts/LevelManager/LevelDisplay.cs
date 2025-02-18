@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,19 +25,21 @@ public class LevelDisplay : MonoBehaviour
     {
         DisplayLevels();
         LevelUI.OnLevelClick += OnLevelClick;
+        LevelUI.OnLevelBuy += OpenLevel;
     }
     private void OnDestroy()
     {
         LevelUI.OnLevelClick -= OnLevelClick;
+        LevelUI.OnLevelBuy -= OpenLevel;
     }
     private void DisplayLevels()
     {
         for (int i = 0; i < levelDatas.Length; i++)
         {
             LevelUI levelUIGO = Instantiate(levelUI, parent);
-            levelUIGO.SetLevel(levelDatas[i].levelSprite, new Resource(keyData, levelDatas[i].keyCost), i);
+            levelUIGO.SetLevel(levelDatas[i].levelSprite, new Resource(keyData, levelDatas[i].keyCost), i, levelDatas[i].keyCost);
             string pref = this.pref + i.ToString();
-            if (!SaveSystem.HasKey(pref) && SaveSystem.LoadInt(pref) != 1)
+            if (!SaveSystem.HasKey(pref) || SaveSystem.LoadInt(pref) != 1)
             {
                 levelUIGO.LockLevel();
                 uiObjects.Add(levelUIGO);
@@ -53,21 +54,21 @@ public class LevelDisplay : MonoBehaviour
         string pref = this.pref + index.ToString();
         SaveSystem.SaveInt(pref, 1);
         uiObjects[index].UnlockLevel();
-        if (levelDatas.Length < index)
+        if (levelDatas.Length > (index + 1))
         {
             LevelUI levelUIGO = Instantiate(levelUI, parent);
-            levelUIGO.SetLevel(levelDatas[index + 1].levelSprite, new Resource(keyData, levelDatas[index + 1].keyCost), index + 1);
+            levelUIGO.SetLevel(levelDatas[index + 1].levelSprite, new Resource(keyData, levelDatas[index + 1].keyCost), index + 1, levelDatas[index + 1].keyCost);
             levelUIGO.LockLevel();
             uiObjects.Add(levelUIGO);
         }
     }
     private void OnLevelClick(int index)
     {
-        bool isLocked = true;
+        bool isLocked = false;
         string pref = this.pref + index.ToString();
-        if (!SaveSystem.HasKey(pref) && SaveSystem.LoadInt(pref) != 1)
+        if (!SaveSystem.HasKey(pref) || SaveSystem.LoadInt(pref) != 1)
         {
-            isLocked = false;
+            isLocked = true;
         }
         if (isLocked)
         {

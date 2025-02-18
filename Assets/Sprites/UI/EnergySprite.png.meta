@@ -152,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250218192418_0"
+      name: EnergySprite
       rect:
         serializedVersion: 2
         x: 11
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250218192418_0": -927619146434386707
+      EnergySprite: -927619146434386707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

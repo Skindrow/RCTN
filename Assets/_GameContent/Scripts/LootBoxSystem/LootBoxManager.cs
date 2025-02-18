@@ -12,6 +12,7 @@ public class LootBoxManager : MonoBehaviour
     [SerializeField] private UnityEvent onNotEnoughGold;
     [SerializeField] private GameObject blockPanel;
     [SerializeField] private GameObject lootButton;
+    [SerializeField] private GameObject closeButton;
 
     private GameObject uiObject;
     public void LootBoxBuy()
@@ -35,6 +36,7 @@ public class LootBoxManager : MonoBehaviour
     private IEnumerator BlockPanelEnable()
     {
         lootButton.SetActive(false);
+        closeButton.SetActive(false);
         yield return new WaitForSeconds(2f);
         blockPanel.SetActive(true);
     }
@@ -43,6 +45,7 @@ public class LootBoxManager : MonoBehaviour
         Destroy(uiObject);
         blockPanel.SetActive(false);
         lootButton.SetActive(true);
+        closeButton.SetActive(true);
     }
     private Loot GetRandomLoot()
     {

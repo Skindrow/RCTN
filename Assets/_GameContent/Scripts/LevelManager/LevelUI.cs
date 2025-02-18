@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI levelCost;
     [SerializeField] private Image icon;
     [SerializeField] private ResourcesChanger buyer;
     [SerializeField] private Button levelButton;
@@ -13,11 +13,12 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private UnityEvent onUnlock;
 
     private int levelIndex;
-    public void SetLevel(Sprite sprite, Resource res, int index)
+    public void SetLevel(Sprite sprite, Resource res, int index, int cost)
     {
         icon.sprite = sprite;
         buyer.SetResources(res);
         levelIndex = index;
+        levelCost.text = cost.ToString();
     }
     public void LockLevel()
     {
@@ -31,6 +32,7 @@ public class LevelUI : MonoBehaviour
     }
     public delegate void LevelClickEvent(int index);
     public static LevelClickEvent OnLevelClick;
+    public static LevelClickEvent OnLevelBuy;
     public void LevelButtonClick()
     {
         OnLevelClick?.Invoke(levelIndex);
@@ -39,7 +41,9 @@ public class LevelUI : MonoBehaviour
     {
         if (buyer.IsCanResourceSpend())
         {
-            UnlockLevel();
+            buyer.ResourceSpend();
+            //UnlockLevel();
+            OnLevelBuy?.Invoke(levelIndex);
         }
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf848a2c8da1bd8469670b5a42dbe73f, type: 3}
+  m_Name: 3_ElfLevel
+  m_EditorClassIdentifier: 
+  levelSprite: {fileID: -2217743743108310589, guid: 8c588727b41585d41af7d9d48a8703cf, type: 3}
+  keyCost: 5
+  EnemySquadsData:
+  - {fileID: 11400000, guid: 6cb006c701be4c34a89cc77c0c3dfdb2, type: 2}
+  - {fileID: 11400000, guid: dd59316b2076d8444937a69360f68287, type: 2}
+  - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
+  LoopEnemySquadsData:
+  - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
+  PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
