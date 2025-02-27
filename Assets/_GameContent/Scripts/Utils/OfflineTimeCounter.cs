@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.CompilerServices;
 
 public class OfflineTimeCounter : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class OfflineTimeCounter : MonoBehaviour
         else
         {
             lastQuitTime = DateTime.Now;
+        }
+    }
+    public void DeleteTime()
+    {
+        if (SaveSystem.HasKey(pref))
+        {
+            SaveSystem.DeleteKey(pref);
+            print("deleted");
         }
     }
 
@@ -37,6 +46,7 @@ public class OfflineTimeCounter : MonoBehaviour
     {
         string quitTimeString = DateTime.Now.ToString();
         SaveSystem.Save(pref, quitTimeString);
+        print("saved");
     }
     public long CalculateInactiveMinutes()
     {
@@ -45,18 +55,18 @@ public class OfflineTimeCounter : MonoBehaviour
         long offlineMinutes = (long)inactiveTime.TotalMinutes;
         return offlineMinutes;
     }
-    public long CalculateInactiveSeconds()
+    public double CalculateInactiveSeconds()
     {
         LoadTime();
         TimeSpan inactiveTime = DateTime.Now - lastQuitTime;
-        long offlineSeconds = (long)inactiveTime.TotalSeconds;
+        double offlineSeconds = inactiveTime.TotalSeconds;
         return offlineSeconds;
     }
-    public long CalculateInactiveHours()
+    public double CalculateInactiveHours()
     {
         LoadTime();
         TimeSpan inactiveTime = DateTime.Now - lastQuitTime;
-        long offlineSeconds = (long)inactiveTime.TotalHours;
+        double offlineSeconds = inactiveTime.TotalHours;
         return offlineSeconds;
     }
     public int CurrentWeek()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2aa246a2e758a76419ba8ee41b8ed25a
+guid: cd24015dea1ad7040906aabb07ceba8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7521887428491503522
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F29_20250218210444_0"
+      213: -6387141827742192153
+    second: Gradient_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -72,12 +72,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CardStat
+      name: Gradient_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 0
         y: 0
-        width: 48
-        height: 64
+        width: 1000
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5899488c33ec9790800000000000000
-      internalID: -7521887428491503522
+      spriteID: 7ed236329505c57a0800000000000000
+      internalID: -6387141827742192153
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: db8b505e70d13524ea5e81000734118b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CardStat: -7521887428491503522
+      Gradient_0: -6387141827742192153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

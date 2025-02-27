@@ -10,93 +10,130 @@ public class OfflineTicker : MonoBehaviour
     [SerializeField] private UnityEvent onTick;
     [SerializeField] private OfflineTimeCounter offlineTimeCounter;
     [SerializeField] private bool isOnStart;
-
+    [SerializeField] private int maxTicks;
     private Coroutine tickCoroutine;
     private int currentSecondsRemaining;
     private bool isTickingActive;
 
-    private const string RemainingTimeKey = "RemainingTime"; // Ключ для сохранения оставшегося времени
 
-    private void Start()
+
+    public int GetOfflineTicks()
     {
-        // Автоматически запускаем таймер при старте
-        if (isOnStart)
-            StartTicking();
-    }
-
-    // Метод для запуска таймера
-    public void StartTicking()
-    {
-        if (isTickingActive) return; // Если таймер уже активен, ничего не делаем
-
-        isTickingActive = true;
-
-        // Проверяем, сколько времени прошло с момента последнего выхода в оффлайн
         if (offlineTimeCounter.IsHasLastQuitTime())
         {
-            long offlineSeconds = offlineTimeCounter.CalculateInactiveSeconds();
+            double inactiveSecondsDouble = offlineTimeCounter.CalculateInactiveSeconds();
+            print("Last offline time (sec) " + inactiveSecondsDouble);
+            long inactiveSeconds = (long)inactiveSecondsDouble;
 
-            // Вычисляем количество пропущенных интервалов и остаток времени
-            int ticksMissed = (int)(offlineSeconds / secondsToTick);
-            int remainderSeconds = (int)(offlineSeconds % secondsToTick);
-
-            // Вызываем событие onTick за пропущенные интервалы
-            for (int i = 0; i < ticksMissed; i++)
+            int ticks = 0;
+            while (inactiveSeconds >= secondsToTick)
             {
-                onTick.Invoke();
+                print("enter Tick");
+                if (ticks >= maxTicks)
+                {
+                    inactiveSeconds = 0;
+                    return maxTicks;
+                }
+                ticks++;
+                inactiveSeconds -= secondsToTick;
             }
+            return ticks;
+        }
+        return 0;
+    }
+    public int LastedSeconds()
+    {
+        if (offlineTimeCounter.IsHasLastQuitTime())
+        {
+            double inactiveSecondsDouble = offlineTimeCounter.CalculateInactiveSeconds();
+            print("Last offline time (sec) " + inactiveSecondsDouble);
+            long inactiveSeconds = (long)inactiveSecondsDouble;
 
-            // Устанавливаем оставшееся время до следующего вызова события
-            currentSecondsRemaining = secondsToTick - remainderSeconds;
+            int ticksThresold = maxTicks;
+            while (inactiveSeconds >= secondsToTick)
+            {
+                print("enter Tick");
+                if (ticksThresold <= 0)
+                {
+                    inactiveSeconds = 0;
+                    break;
+                }
+                ticksThresold--;
+                inactiveSeconds -= secondsToTick;
+                onTick?.Invoke();
+            }
+            currentSecondsRemaining -= (int)inactiveSeconds;
+        }
+        return 0;
+    }
+    public void CheckOfflineTime()
+    {
+        if (offlineTimeCounter.IsHasLastQuitTime())
+        {
+            double inactiveSecondsDouble = offlineTimeCounter.CalculateInactiveSeconds();
+            print("Last offline time (sec) " + inactiveSecondsDouble);
+            long inactiveSeconds = (long)inactiveSecondsDouble;
+
+            int ticksThresold = maxTicks;
+            while (inactiveSeconds >= secondsToTick)
+            {
+                print("enter Tick");
+                if (ticksThresold <= 0)
+                {
+                    inactiveSeconds = 0;
+                    break;
+                }
+                ticksThresold--;
+                inactiveSeconds -= secondsToTick;
+                onTick?.Invoke();
+            }
+            currentSecondsRemaining -= (int)inactiveSeconds;
         }
         else
         {
-            // Если данных о времени выхода в оффлайн нет, загружаем сохраненное значение
-            if (SaveSystem.HasKey(RemainingTimeKey))
-            {
-                currentSecondsRemaining = SaveSystem.LoadInt(RemainingTimeKey);
-            }
-            else
-            {
-                currentSecondsRemaining = secondsToTick;
-            }
+            offlineTimeCounter.SaveTime();
         }
+    }
+    public void ContinueTicking()
+    {
+        currentSecondsRemaining = secondsToTick;
 
-        // Запускаем корутину для отслеживания времени
+        CheckOfflineTime();
+
         if (tickCoroutine != null)
-        {
             StopCoroutine(tickCoroutine);
-        }
+        tickCoroutine = StartCoroutine(TickCoroutine());
+    }
+    public void StartNewTicking()
+    {
+        offlineTimeCounter.SaveTime();
+        currentSecondsRemaining = secondsToTick;
+        if (tickCoroutine != null)
+            StopCoroutine(tickCoroutine);
         tickCoroutine = StartCoroutine(TickCoroutine());
     }
 
-    // Метод для остановки таймера
     public void StopTicking()
     {
-        if (!isTickingActive) return; // Если таймер уже остановлен, ничего не делаем
-
-        isTickingActive = false;
-
-        // Останавливаем корутину
         if (tickCoroutine != null)
-        {
             StopCoroutine(tickCoroutine);
-            tickCoroutine = null;
-        }
-
-        // Сохраняем оставшееся время
-        SaveSystem.SaveInt(RemainingTimeKey, currentSecondsRemaining);
-
-        // Очищаем текст таймера (опционально)
-        if (timerText != null)
-        {
-            timerText.text = "Timer stopped";
-        }
+    }
+    public void DeleteTimer()
+    {
+        offlineTimeCounter.DeleteTime();
+    }
+    public void TickEventOnline()
+    {
+        onTick?.Invoke();
+        offlineTimeCounter.SaveTime();
     }
 
     private IEnumerator TickCoroutine()
     {
-        while (isTickingActive)
+
+        UpdateTimerText(currentSecondsRemaining);
+
+        while (true)
         {
             // Обновляем таймер каждую секунду
             yield return new WaitForSeconds(1);
@@ -107,7 +144,7 @@ public class OfflineTicker : MonoBehaviour
             // Если время вышло, вызываем событие и сбрасываем таймер
             if (currentSecondsRemaining <= 0)
             {
-                onTick.Invoke();
+                TickEventOnline();
                 currentSecondsRemaining = secondsToTick;
             }
 
@@ -127,15 +164,4 @@ public class OfflineTicker : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        // Сохраняем время выхода в оффлайн
-        offlineTimeCounter.SaveTime();
-
-        // Сохраняем оставшееся время
-        SaveSystem.SaveInt(RemainingTimeKey, currentSecondsRemaining);
-
-        // Останавливаем корутину при уничтожении объекта
-        StopTicking();
-    }
 }

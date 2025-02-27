@@ -36,6 +36,7 @@ public class Unit : MonoBehaviour
 
     private float moveForce;
     private const int PLAYER_INDEX = 0;
+    private const int PLAYER_LAYER = 6;
 
     private void Start()
     {
@@ -65,7 +66,10 @@ public class Unit : MonoBehaviour
         fractionIndex = fraction;
         health.SetIndex(fraction);
         if (fractionIndex == PLAYER_INDEX)
+        {
             onPlayerUnit?.Invoke();
+            gameObject.layer = PLAYER_LAYER;
+        }
     }
     private IEnumerator TargetFindFlow()
     {
