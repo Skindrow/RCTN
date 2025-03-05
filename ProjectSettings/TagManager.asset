@@ -44,5 +44,8 @@ TagManager:
   - name: TopLayer
     uniqueID: 2624381297
     locked: 0
+  - name: UI
+    uniqueID: 2062402025
+    locked: 0
   m_RenderingLayers:
   - Default

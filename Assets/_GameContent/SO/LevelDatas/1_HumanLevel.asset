@@ -21,3 +21,4 @@ MonoBehaviour:
   LoopEnemySquadsData:
   - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
   PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
+  ChestSpawnData: {fileID: 11400000, guid: 5e75d4c5f5cd4b14ea70b1154db2b569, type: 2}

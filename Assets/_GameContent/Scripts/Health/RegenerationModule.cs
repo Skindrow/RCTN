@@ -10,7 +10,7 @@ public class RegenerationModule : MonoBehaviour
     private void Start()
     {
         InitializeStats();
-        if (timesAtSecond >= 0.0001f)
+        if (timesAtSecond >= 0.001f)
             StartCoroutine(RegenerationFlow());
     }
     private void InitializeStats()

@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class RangeAttacker : Attacker
 {
-    [SerializeField] private float animationAttackDelay;
-    [SerializeField] private float postAttackDelay;
     [SerializeField] private Transform shootingTransform;
     [SerializeField] private Projectile projectile;
     public override void Attack(HealthBehaviour target, int damage)

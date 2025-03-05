@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private PhysicMover mover;
     [SerializeField] private HealthBehaviour health;
     [SerializeField] private Attacker attacker;
+    [SerializeField] private StatData attackStatData;
     [SerializeField] private float startMoveForce;
     [SerializeField] private float attackMoveMultiplier;
     [SerializeField] private float attractMultiplier;
@@ -40,6 +41,11 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
+        if (attackStatData != null)
+        {
+            damage = (int)(attackStatData.GetStat() * (float)damage);
+        }
+
         moveForce = startMoveForce;
         StartCoroutine(TargetFindFlow());
         health.OnHealthEnd += OnDeath;

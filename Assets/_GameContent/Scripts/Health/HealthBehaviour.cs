@@ -13,6 +13,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private StatData healthStat;
     private bool isInvoul = false;
+    private bool isDead = false;
     public int MaxHealth
     {
         get
@@ -56,7 +57,7 @@ public class HealthBehaviour : MonoBehaviour
     }
     public void GetDamage(int count)
     {
-        if (!isInvoul)
+        if (!isInvoul && !isDead)
         {
             CurrentHealth -= count;
             if (CurrentHealth <= 0)
@@ -92,6 +93,7 @@ public class HealthBehaviour : MonoBehaviour
     }
     private void Death()
     {
+        isDead = true;
         onDeath?.Invoke();
         if (isDestroyedOnDeath)
             Destroy(gameObject);

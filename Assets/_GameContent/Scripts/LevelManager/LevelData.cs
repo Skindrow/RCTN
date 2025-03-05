@@ -8,4 +8,5 @@ public class LevelData : ScriptableObject
     [SerializeField] public SquadSpawnData[] EnemySquadsData;
     [SerializeField] public SquadSpawnData[] LoopEnemySquadsData;
     [SerializeField] public SquadSpawnData PlayerSquadData;
+    [SerializeField] public ChestSpawnData ChestSpawnData;
 }

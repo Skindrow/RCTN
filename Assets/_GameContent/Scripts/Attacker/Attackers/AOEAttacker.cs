@@ -5,8 +5,6 @@ public class AOEAttacker : Attacker
 {
     [SerializeField] private ContactDamage aoeDamagerPref;
     [SerializeField] private GameObject aoeFX;
-    [SerializeField] private float animationAttackDelay;
-    [SerializeField] private float postAttackDelay;
     public override void Attack(HealthBehaviour target, int damage)
     {
         StartCoroutine(AttackDelay(target, damage));

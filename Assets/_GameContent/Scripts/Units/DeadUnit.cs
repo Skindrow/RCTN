@@ -7,7 +7,7 @@ public class DeadUnit : MonoBehaviour
 
     public Unit ReviveUnit()
     {
-        Unit revivedUnit = Instantiate(unit, transform.position, Quaternion.identity);
+        Unit revivedUnit = Instantiate(unit, transform.position + ReviveDeviation(0.3f), Quaternion.identity);
         return revivedUnit;
     }
     public Unit ReviveUnit(int fraction)
@@ -18,5 +18,12 @@ public class DeadUnit : MonoBehaviour
     public void BodyDestroy()
     {
         Destroy(gameObject);
+    }
+
+    private Vector3 ReviveDeviation(float deviation)
+    {
+        float x = Random.Range(-deviation, deviation);
+        float y = Random.Range(-deviation, deviation);
+        return new Vector3(x, y, 0);
     }
 }

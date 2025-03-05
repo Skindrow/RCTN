@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class MeleeAttacker : Attacker
 {
-    [SerializeField] private float animationAttackDelay;
-    [SerializeField] private float postAttackDelay;
     public override void Attack(HealthBehaviour target, int damage)
     {
         StartCoroutine(AttackDelay(target, damage));

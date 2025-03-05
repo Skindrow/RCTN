@@ -15,6 +15,24 @@ public class LootBoxManager : MonoBehaviour
     [SerializeField] private GameObject closeButton;
 
     private GameObject uiObject;
+    private List<Loot> lootList;
+    private void Start()
+    {
+        InitializeLoot();
+    }
+    private void InitializeLoot()
+    {
+        lootList = new List<Loot>();
+        for (int i = 0; i < possibleLoots.Count; i++)
+        {
+            string key = possibleLoots[i].LootAdder.name;
+            if (SaveSystem.HasKey(key) && SaveSystem.LoadInt(key) >= possibleLoots[i].Max)
+            {
+                continue;
+            }
+            lootList.Add(possibleLoots[i]);
+        }
+    }
     public void LootBoxBuy()
     {
         if (buyer.IsCanResourceSpend())
@@ -32,6 +50,7 @@ public class LootBoxManager : MonoBehaviour
         Loot selectedLoot = GetRandomLoot();
         uiObject = selectedLoot.LootAdder.InstantiateUIObject(parent);
         StartCoroutine(BlockPanelEnable());
+        InitializeLoot();
     }
     private IEnumerator BlockPanelEnable()
     {
@@ -52,7 +71,7 @@ public class LootBoxManager : MonoBehaviour
         float totalWeight = 0;
 
         // —читаем суммарный вес всех возможных лутов
-        foreach (var loot in possibleLoots)
+        foreach (var loot in lootList)
         {
             totalWeight += loot.Weight;
         }
@@ -61,10 +80,12 @@ public class LootBoxManager : MonoBehaviour
         float randomValue = Random.Range(0, totalWeight);
 
         // ѕроходим по списку лутов и выбираем тот, который соответствует случайному числу
-        foreach (var loot in possibleLoots)
+        foreach (var loot in lootList)
         {
             if (randomValue < loot.Weight)
             {
+                string key = loot.LootAdder.name;
+                SaveSystem.SaveInt(key, (SaveSystem.LoadInt(key) + 1));
                 return loot;
             }
             randomValue -= loot.Weight;
@@ -78,4 +99,5 @@ public class Loot
 {
     public AdderBehaviour LootAdder;
     public float Weight;
+    public int Max;
 }
