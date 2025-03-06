@@ -42,6 +42,18 @@ public class SFXController : MonoBehaviour
         audioSources[currentSourceIndex].Play();
         currentSourceIndex++;
     }
+
+    public void PlayClipWithRandomPitch(AudioClip clip)
+    {
+        if (currentSourceIndex >= audioSources.Length)
+        {
+            currentSourceIndex = 0;
+        }
+        audioSources[currentSourceIndex].pitch = 1f + Random.Range(-0.3f, 0.3f);
+        audioSources[currentSourceIndex].clip = clip;
+        audioSources[currentSourceIndex].Play();
+        currentSourceIndex++;
+    }
     public void SetSFXVolume(float volume)
     {
         for (int i = 0; i < audioSources.Length; i++)

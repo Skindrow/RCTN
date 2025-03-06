@@ -6,4 +6,8 @@ public class SFXPlayer : MonoBehaviour
     {
         SFXController.Instance.PlayClip(clip);
     }
+    public void PlayClipWithRandomPitch(AudioClip clip)
+    {
+        SFXController.Instance.PlayClipWithRandomPitch(clip);
+    }
 }

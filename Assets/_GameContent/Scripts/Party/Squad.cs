@@ -12,7 +12,13 @@ public class Squad : MonoBehaviour
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
-
+    public int UnitsCount
+    {
+        get
+        {
+            return squadMembers.Count;
+        }
+    }
     private void Start()
     {
         InitializeStartUnits();

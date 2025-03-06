@@ -71,13 +71,11 @@ public class OfflineTicker : MonoBehaviour
         if (offlineTimeCounter.IsHasLastQuitTime())
         {
             double inactiveSecondsDouble = offlineTimeCounter.CalculateInactiveSeconds();
-            print("Last offline time (sec) " + inactiveSecondsDouble);
             long inactiveSeconds = (long)inactiveSecondsDouble;
 
             int ticksThresold = maxTicks;
             while (inactiveSeconds >= secondsToTick)
             {
-                print("enter Tick");
                 if (ticksThresold <= 0)
                 {
                     inactiveSeconds = 0;

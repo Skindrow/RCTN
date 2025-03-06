@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HP
   m_EditorClassIdentifier: 
   StatPref: HP
-  DefaultValue: 0.5
+  DefaultValue: 1

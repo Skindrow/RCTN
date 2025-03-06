@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ATK_Speed
   m_EditorClassIdentifier: 
   StatPref: ATK_Speed
-  DefaultValue: 0.5
+  DefaultValue: 1

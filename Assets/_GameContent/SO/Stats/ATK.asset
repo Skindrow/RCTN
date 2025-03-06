@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ATK
   m_EditorClassIdentifier: 
   StatPref: ATK
-  DefaultValue: 0.5
+  DefaultValue: 1

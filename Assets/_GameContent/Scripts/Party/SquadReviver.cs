@@ -7,20 +7,25 @@ public class SquadReviver : MonoBehaviour
     [SerializeField] private GameObject fxRevive;
     [SerializeField] private GameObject fxAppear;
     [SerializeField] private StatData doubleReviveStat;
+    [SerializeField] private StatData maxReviveStat;
     private Squad squad;
-
+    private int maxUnits = 200;
     private float doubleReviveChance = 0.0f;
     private void Start()
     {
         if (doubleReviveStat != null)
             doubleReviveChance = doubleReviveStat.GetStat();
+        if (maxReviveStat != null)
+        {
+            maxUnits = (int)(maxReviveStat.GetStat() * (float)maxUnits);
+        }
         squad = GetComponent<Squad>();
         Squad.OnLeaveDeadBodies += ReviveSquad;
     }
     private void OnDestroy()
     {
 
-        Squad.OnLeaveDeadBodies += ReviveSquad;
+        Squad.OnLeaveDeadBodies -= ReviveSquad;
     }
 
     private void ReviveSquad(List<DeadUnit> squadDeadUnits)
@@ -29,6 +34,7 @@ public class SquadReviver : MonoBehaviour
     }
     private IEnumerator ReviveDelay(List<DeadUnit> squadDeadUnits)
     {
+
         for (int i = 0; i < squadDeadUnits.Count; i++)
         {
             if (fxRevive != null)
@@ -50,6 +56,13 @@ public class SquadReviver : MonoBehaviour
             {
                 Unit reviveUnit = squadDeadUnits[i].ReviveUnit();
                 squad.AddUnit(reviveUnit);
+            }
+            if (squad.UnitsCount >= maxUnits)
+            {
+                print("max units reached");
+                print("max units count " + maxUnits);
+                print("units count " + squad.UnitsCount);
+                break;
             }
         }
         for (int i = 0; i < squadDeadUnits.Count; i++)

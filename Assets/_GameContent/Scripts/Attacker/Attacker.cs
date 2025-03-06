@@ -7,7 +7,7 @@ public class Attacker : MonoBehaviour
     [SerializeField] protected UnityEvent onAttack;
     [SerializeField] protected float animationAttackDelay;
     [SerializeField] protected float postAttackDelay;
-    [SerializeField] private StatData statData;
+    [SerializeField] private StatData attackSpeedStatData;
     public delegate void AttackStateEvent();
     public AttackStateEvent OnAttackStart;
     public AttackStateEvent OnAttackDo;
@@ -23,9 +23,9 @@ public class Attacker : MonoBehaviour
     }
     protected void StatInitialize()
     {
-        if (statData != null)
+        if (attackSpeedStatData != null)
         {
-            postAttackDelay /= statData.GetStat();
+            postAttackDelay /= attackSpeedStatData.GetStat();
         }
     }
     public virtual void Attack(HealthBehaviour target, int damage)

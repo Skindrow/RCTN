@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: StatDOUBLER
     m_Metadata:
       m_Items: []
+  - m_Id: 16625392598392832
+    m_Key: StatMAX
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

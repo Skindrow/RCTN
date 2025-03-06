@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +13,7 @@ public class CardStatUI : MonoBehaviour
     {
         icon.sprite = iconSprite;
         countText.text = "x" + count.ToString();
-        valueText.text = Mathf.Round(value * 100).ToString() + "%";
+        valueText.text = "+" + Mathf.Round(value * 100).ToString() + "%";
         describeText.text = describe;
     }
     public void SetStatCard(CardStatData cardStatData, int count)

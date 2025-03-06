@@ -1,7 +1,5 @@
 
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 
 public class CardStatManager : MonoBehaviour

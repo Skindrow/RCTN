@@ -1341,7 +1341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -38.065002}
+  m_AnchoredPosition: {x: 0, y: -38.065018}
   m_SizeDelta: {x: -100, y: -176.12994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701000608
@@ -3950,6 +3950,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a2f50cfa6e3f4142a6755330f9cc961, type: 2}
   - {fileID: 11400000, guid: 82e6bae3143127d4daf43617c8da1b2e, type: 2}
   - {fileID: 11400000, guid: c48406e3b059c5d4c9575b9c052ac7aa, type: 2}
+  - {fileID: 11400000, guid: 491d6395b3adcb145a9fa11bfbc6b22e, type: 2}
 --- !u!1 &1518734894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +4101,9 @@ MonoBehaviour:
   - LootAdder: {fileID: 11400000, guid: f9648f7371b347f40905580ef7079e0b, type: 2}
     Weight: 1
     Max: 1
+  - LootAdder: {fileID: 11400000, guid: b2b84869e58cb6e4f98d83168e3044ad, type: 2}
+    Weight: 5
+    Max: 5
   parent: {fileID: 1781278484}
   buyer: {fileID: 1520494901}
   onNotEnoughGold:

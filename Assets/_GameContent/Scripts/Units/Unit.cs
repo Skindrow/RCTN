@@ -18,16 +18,11 @@ public class Unit : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float detectRadius;
     [SerializeField] private float attackRadius;
-    [SerializeField] private float attackPerSecond;
     [SerializeField] private UnityEvent onWalk;
     [SerializeField] private UnityEvent onStop;
     [SerializeField] private UnityEvent onPlayerUnit;
     [Header("Animation")]
     [SerializeField] private Transform rotatedTransform;
-    [SerializeField] private Animator animator;
-    [SerializeField] private string attackAnimationName;
-    [SerializeField] private string walkAnimationName;
-    [SerializeField] private string idleAnimationName;
 
     public DeadUnit DeadUnit => deadUnit;
     private float detectTick = 0.1f;
