@@ -28,6 +28,7 @@ public class ResourcesManager : MonoBehaviour
 
     public delegate void ResourceChangeEvent(ResourceData data, int current);
     public ResourceChangeEvent OnResourceChange;
+    public ResourceChangeEvent OnResourceNotEnough;
 
     private string pref = "Resource";
 
@@ -93,7 +94,15 @@ public class ResourcesManager : MonoBehaviour
         Resource resource = resources.Find(r => r.Data == data);
         if (resource != null)
         {
-            return resource.IsCanSpendAmount(amount);
+            if (resource.IsCanSpendAmount(amount))
+            {
+                return true;
+            }
+            else
+            {
+                OnResourceNotEnough?.Invoke(data, amount);
+                return false;
+            }
         }
         return false;
     }

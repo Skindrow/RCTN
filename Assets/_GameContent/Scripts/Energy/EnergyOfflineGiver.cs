@@ -27,7 +27,6 @@ public class EnergyOfflineGiver : MonoBehaviour
 
         if (ResourcesManager.Instance.GetResourceAmount(energyResource) < maxEnergy)
         {
-            print("enter1");
             ticker.ContinueTicking();
             timerObject.SetActive(true);
         }

@@ -11,6 +11,8 @@ public class SquadReviver : MonoBehaviour
     private Squad squad;
     private int maxUnits = 200;
     private float doubleReviveChance = 0.0f;
+
+    public int MaxUnits => maxUnits;
     private void Start()
     {
         if (doubleReviveStat != null)
@@ -43,6 +45,10 @@ public class SquadReviver : MonoBehaviour
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < squadDeadUnits.Count; i++)
         {
+            if (squad.UnitsCount >= maxUnits)
+            {
+                break;
+            }
             if (fxAppear != null)
                 Instantiate(fxAppear, squadDeadUnits[i].transform.position, Quaternion.identity);
 
@@ -56,13 +62,6 @@ public class SquadReviver : MonoBehaviour
             {
                 Unit reviveUnit = squadDeadUnits[i].ReviveUnit();
                 squad.AddUnit(reviveUnit);
-            }
-            if (squad.UnitsCount >= maxUnits)
-            {
-                print("max units reached");
-                print("max units count " + maxUnits);
-                print("units count " + squad.UnitsCount);
-                break;
             }
         }
         for (int i = 0; i < squadDeadUnits.Count; i++)

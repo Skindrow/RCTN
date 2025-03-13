@@ -27,3 +27,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9d42590ecdfb6443b8cf8eb5b8c996d, type: 2}
   PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
   ChestSpawnData: {fileID: 11400000, guid: 5e75d4c5f5cd4b14ea70b1154db2b569, type: 2}
+  CameraColor: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
+  Map: {fileID: 461307577840746403, guid: 76bc9775fdf494947848ce0524bfff9e, type: 3}
+  levelName:
+    m_TableReference:
+      m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
+    m_TableEntryReference:
+      m_KeyId: 18070183366369280
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

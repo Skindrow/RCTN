@@ -37,7 +37,8 @@ public class LevelDisplay : MonoBehaviour
         for (int i = 0; i < levelDatas.Length; i++)
         {
             LevelUI levelUIGO = Instantiate(levelUI, parent);
-            levelUIGO.SetLevel(levelDatas[i].levelSprite, new Resource(keyData, levelDatas[i].keyCost), i, levelDatas[i].keyCost);
+            levelUIGO.SetLevel(levelDatas[i].levelSprite, new Resource(keyData, levelDatas[i].keyCost), i, levelDatas[i].keyCost,
+                levelDatas[i].levelName.GetLocalizedString());
             string pref = this.pref + i.ToString();
             if (!SaveSystem.HasKey(pref) || SaveSystem.LoadInt(pref) != 1)
             {
@@ -57,7 +58,8 @@ public class LevelDisplay : MonoBehaviour
         if (levelDatas.Length > (index + 1))
         {
             LevelUI levelUIGO = Instantiate(levelUI, parent);
-            levelUIGO.SetLevel(levelDatas[index + 1].levelSprite, new Resource(keyData, levelDatas[index + 1].keyCost), index + 1, levelDatas[index + 1].keyCost);
+            levelUIGO.SetLevel(levelDatas[index + 1].levelSprite, new Resource(keyData, levelDatas[index + 1].keyCost),
+                index + 1, levelDatas[index + 1].keyCost, levelDatas[index + 1].levelName.GetLocalizedString());
             levelUIGO.LockLevel();
             uiObjects.Add(levelUIGO);
         }

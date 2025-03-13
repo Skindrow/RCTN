@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf848a2c8da1bd8469670b5a42dbe73f, type: 3}
-  m_Name: 3_ElfLevel
+  m_Name: 2_ElfLevel
   m_EditorClassIdentifier: 
-  levelSprite: {fileID: 5245822438585175251, guid: fa7220cf7b383b743928f07bb0d10eec, type: 3}
+  levelSprite: {fileID: -154462198, guid: 0691629519579a841890340df5280748, type: 3}
   keyCost: 5
   EnemySquadsData:
   - {fileID: 11400000, guid: 6cb006c701be4c34a89cc77c0c3dfdb2, type: 2}
@@ -22,3 +22,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
   PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
   ChestSpawnData: {fileID: 0}
+  CameraColor: {r: 0, g: 0, b: 0, a: 0}
+  Map: {fileID: 0}
+  levelName:
+    m_TableReference:
+      m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
+    m_TableEntryReference:
+      m_KeyId: 16625392598392832
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

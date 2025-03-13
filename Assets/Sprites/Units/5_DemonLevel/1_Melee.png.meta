@@ -152,23 +152,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005506_0"
+      name: 1_Melee
       rect:
         serializedVersion: 2
-        x: 9
-        y: 6
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 10
+        y: 7
+        width: 12
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: -0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 017bb2e36f96c3c90800000000000000
-      internalID: -7188754398864230640
+      spriteID: de3cb654e60363b4d9e72be8df5c923b
+      internalID: -822565229
       vertices: []
       indices: 
       edges: []
@@ -187,6 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      1_Melee: -822565229
       "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005506_0": -7188754398864230640
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

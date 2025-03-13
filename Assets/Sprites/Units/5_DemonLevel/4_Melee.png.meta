@@ -152,23 +152,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005510_0"
+      name: 4_Melee
       rect:
         serializedVersion: 2
-        x: 8
-        y: 6
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 7
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: -0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9027eebb7b238aed0800000000000000
-      internalID: -2402614636488789495
+      spriteID: d58d378cd6c8f6b42bdb463d6d3be4d1
+      internalID: -2136260696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Melee_Dead
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 17
+        width: 6
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aca300a45373c74a8a642335562b688
+      internalID: 1111418678
       vertices: []
       indices: 
       edges: []
@@ -187,6 +209,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      4_Melee: -2136260696
+      4_Melee_Dead: 1111418678
       "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005510_0": -2402614636488789495
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -20,5 +20,5 @@ MonoBehaviour:
   - UnitPref: {fileID: 1985693962428461482, guid: 47f61d4283dea3d47a108c0c76a4fb90, type: 3}
     ChanceOfSpawn: 1.5
   MinCount: 1
-  MaxCount: 30
+  MaxCount: 20
   secondsBeforeSwitch: 60

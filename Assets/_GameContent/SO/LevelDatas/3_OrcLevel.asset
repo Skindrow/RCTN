@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf848a2c8da1bd8469670b5a42dbe73f, type: 3}
-  m_Name: 2_OrcLevel
+  m_Name: 3_OrcLevel
   m_EditorClassIdentifier: 
   levelSprite: {fileID: -4247964249229121724, guid: cc0bb621bec51d949887c4c81588db35, type: 3}
   keyCost: 1
@@ -22,3 +22,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
   PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
   ChestSpawnData: {fileID: 0}
+  CameraColor: {r: 0.9372549, g: 0.7137255, b: 0.25882354, a: 1}
+  Map: {fileID: 0}
+  levelName:
+    m_TableReference:
+      m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
+    m_TableEntryReference:
+      m_KeyId: 18070183366369280
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

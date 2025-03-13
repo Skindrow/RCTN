@@ -152,23 +152,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F15_20250119102646_0"
+      name: 5_Ranged
       rect:
         serializedVersion: 2
-        x: 8
-        y: 6
-        width: 17
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 7
+        width: 15
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4666667, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fef98591fb8c8b8d0800000000000000
-      internalID: -2830291642712809489
+      spriteID: eb4894366cbd34341a92fe82287b63be
+      internalID: -56984753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Ranged_Dead
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 17
+        width: 8
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae1dadc633089b4ea5282b6294aa860
+      internalID: -209992784
       vertices: []
       indices: 
       edges: []
@@ -187,6 +209,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      5_Ranged: -56984753
+      5_Ranged_Dead: -209992784
       "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F15_20250119102646_0": -2830291642712809489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

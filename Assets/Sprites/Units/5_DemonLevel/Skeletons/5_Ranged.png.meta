@@ -152,23 +152,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213025458_0"
+      name: 5_Ranged
       rect:
         serializedVersion: 2
-        x: 10
-        y: 6
-        width: 20
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 11
+        y: 7
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 34d06db43e2d765e0800000000000000
-      internalID: -1916331242751128253
+      spriteID: a136ae658f480744cb909cb594fcbad8
+      internalID: 1395437263
       vertices: []
       indices: 
       edges: []
@@ -187,6 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      5_Ranged: 1395437263
       "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213025458_0": -1916331242751128253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

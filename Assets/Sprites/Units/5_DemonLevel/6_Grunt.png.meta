@@ -152,23 +152,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005516_0"
+      name: 6_Grunt
       rect:
         serializedVersion: 2
-        x: 6
-        y: 6
-        width: 26
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 7
+        y: 7
+        width: 25
+        height: 17
+      alignment: 9
+      pivot: {x: 0.39999998, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 28f3c604454f04d00800000000000000
-      internalID: 955031763697811330
+      spriteID: 0db262eb6965bc94da42a73a8eea8d28
+      internalID: 653176559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Grunt_Dead
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 17
+        width: 13
+        height: 6
+      alignment: 9
+      pivot: {x: 0.4615385, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7840de0f7f5cfd489d07a6f8d018cc2
+      internalID: 799915936
       vertices: []
       indices: 
       edges: []
@@ -187,6 +209,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      6_Grunt: 653176559
+      6_Grunt_Dead: 799915936
       "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F27_20250213005516_0": 955031763697811330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

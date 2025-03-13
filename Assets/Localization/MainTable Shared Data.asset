@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Key: StatMAX
     m_Metadata:
       m_Items: []
+  - m_Id: 18070183366369280
+    m_Key: Level_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

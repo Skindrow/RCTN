@@ -26,7 +26,6 @@ public class OfflineTimeCounter : MonoBehaviour
         if (SaveSystem.HasKey(pref))
         {
             SaveSystem.DeleteKey(pref);
-            print("deleted");
         }
     }
 

@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aec38721d2fd49f428a914affd5f940d, type: 3}
-  m_Name: 4
+  m_Name: 7
   m_EditorClassIdentifier: 
   UnitsChances:
-  - UnitPref: {fileID: 1985693962428461482, guid: e6e2021ccb3ca2e44a0852945f129837, type: 3}
-    ChanceOfSpawn: 2
   - UnitPref: {fileID: 5332868914615682257, guid: b489f425a843a6a4e87ce26961ebd09f, type: 3}
     ChanceOfSpawn: 2
   - UnitPref: {fileID: 1985693962428461482, guid: 47f61d4283dea3d47a108c0c76a4fb90, type: 3}
+    ChanceOfSpawn: 2
+  - UnitPref: {fileID: 5332868914615682257, guid: 3bf88262bbce9e24ea32b6f4a57a3115, type: 3}
+    ChanceOfSpawn: 1
+  - UnitPref: {fileID: 2141279647814737640, guid: e2f09749c46ce184c965bb04bcb9d5df, type: 3}
     ChanceOfSpawn: 1
   MinCount: 1
-  MaxCount: 25
-  secondsBeforeSwitch: 60
+  MaxCount: 35
+  secondsBeforeSwitch: 120

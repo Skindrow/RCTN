@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LevelUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI levelCost;
+    [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private Image icon;
     [SerializeField] private ResourcesChanger buyer;
     [SerializeField] private Button levelButton;
@@ -13,8 +14,9 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private UnityEvent onUnlock;
 
     private int levelIndex;
-    public void SetLevel(Sprite sprite, Resource res, int index, int cost)
+    public void SetLevel(Sprite sprite, Resource res, int index, int cost, string name)
     {
+        levelText.text = name;
         icon.sprite = sprite;
         buyer.SetResources(res);
         levelIndex = index;

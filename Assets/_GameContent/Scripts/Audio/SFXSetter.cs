@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +10,11 @@ public class SFXSetter : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(SoundInitialize());
+    }
+    private IEnumerator SoundInitialize()
+    {
+        yield return null;
         slider.value = SFXController.Instance.GetSFXVolume();
     }
     public void OnValueChange(float input)

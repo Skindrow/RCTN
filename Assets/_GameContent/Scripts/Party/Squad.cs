@@ -36,12 +36,16 @@ public class Squad : MonoBehaviour
             AddUnit(startSquadMemders[i]);
         }
     }
+    public delegate void SquadUnitChangeEvent(Unit unit);
+    public SquadUnitChangeEvent OnUnitAdd;
+    public SquadUnitChangeEvent OnUnitRemove;
     public void AddUnit(Unit unit)
     {
         if (!squadMembers.Contains(unit))
         {
             squadMembers.Add(unit);
             unit.transform.parent = transform;
+            OnUnitAdd?.Invoke(unit);
         }
         unit.OnUnitDetect += SquadAttackTrigger;
         unit.CurrentSquad = this;
@@ -64,6 +68,7 @@ public class Squad : MonoBehaviour
 
             unit.OnUnitDetect -= SquadAttackTrigger;
             squadMembers.Remove(unit);
+            OnUnitRemove?.Invoke(unit);
         }
         if (isDeadUnitLeave && squadMembers.Count <= 0)
         {
