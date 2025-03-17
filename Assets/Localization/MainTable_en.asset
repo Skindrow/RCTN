@@ -17,7 +17,75 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 46c7517ba5248cf4d934fa870da3f20d, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 20556407184302080
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556366843486208
+    m_Localized: Treasure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556341979652096
+    m_Localized: Cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556311608696832
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556259020513280
+    m_Localized: 'Level 5.
+
+      Demons'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556230595715072
+    m_Localized: 'Level 4.
+
+      Ogres'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556185188179968
+    m_Localized: 'Level 3.
+
+      Orcs'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20556092242403328
+    m_Localized: "Level 2. \nElves"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18070183366369280
+    m_Localized: 'Level 1.
+
+      Humans'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16625392598392832
+    m_Localized: Max Skeletons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1427572153131008
+    m_Localized: Chance to raise two skeletons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1427525168537600
+    m_Localized: Regeneration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1427499964964864
+    m_Localized: Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1427451952766976
+    m_Localized: Attack Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52811800576
+    m_Localized: Health of Skeletons
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

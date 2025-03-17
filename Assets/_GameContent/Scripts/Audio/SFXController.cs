@@ -4,6 +4,8 @@ public class SFXController : MonoBehaviour
 {
     [SerializeField] private AudioSource[] audioSources;
     [SerializeField] private AudioSource musicSource;
+    [SerializeField] private float musicBase = 1.0f;
+    [SerializeField] private float sfxBase = 1.0f;
     private string volumeSFXPref = "volumeSFXPref";
     private string volumeMusicPref = "volumeMusicPref";
 
@@ -54,26 +56,36 @@ public class SFXController : MonoBehaviour
         audioSources[currentSourceIndex].Play();
         currentSourceIndex++;
     }
+    public void PlayMusicClip(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
     public void SetSFXVolume(float volume)
     {
         for (int i = 0; i < audioSources.Length; i++)
         {
-            audioSources[i].volume = volume;
+            audioSources[i].volume = volume * sfxBase;
         }
         PlayerPrefs.SetFloat(volumeSFXPref, volume);
     }
     public float GetSFXVolume()
     {
-        return audioSources[0].volume;
+        return audioSources[0].volume / sfxBase;
     }
     public void SetMusicVolume(float volume)
     {
-        musicSource.volume = volume;
+        musicSource.volume = volume * musicBase;
         PlayerPrefs.SetFloat(volumeMusicPref, volume);
     }
     public float GetMusicVolume()
     {
-        return musicSource.volume;
+        return musicSource.volume / musicBase;
     }
     private void LoadVolume()
     {

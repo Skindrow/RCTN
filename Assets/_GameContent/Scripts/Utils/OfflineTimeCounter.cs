@@ -61,6 +61,13 @@ public class OfflineTimeCounter : MonoBehaviour
         double offlineSeconds = inactiveTime.TotalSeconds;
         return offlineSeconds;
     }
+    public long CalculateInactiveSecondsLong()
+    {
+        LoadTime();
+        TimeSpan inactiveTime = DateTime.Now - lastQuitTime;
+        double offlineSeconds = inactiveTime.TotalSeconds;
+        return (long)offlineSeconds;
+    }
     public double CalculateInactiveHours()
     {
         LoadTime();

@@ -15,6 +15,7 @@ public class LevelDisplay : MonoBehaviour
     [SerializeField] private SceneSwitcher sceneSwitcher;
     [SerializeField] private int levelIndex;
     [SerializeField] private UnityEvent onEnergyLow;
+    [SerializeField] private UnityEvent onLevelChoose;
     private string pref = "Level";
 
     private List<LevelUI> uiObjects = new List<LevelUI>();
@@ -89,6 +90,7 @@ public class LevelDisplay : MonoBehaviour
             currentLevelData = levelDatas[index];
             blockPanel.SetActive(true);
             StartCoroutine(FXLoadWait());
+            onLevelChoose?.Invoke();
         }
         else
         {

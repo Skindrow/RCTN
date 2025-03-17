@@ -105,8 +105,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: aoeFX
+      value: 
+      objectReference: {fileID: 772758151337195258, guid: a8aab3255bd33e343bc1b6dafb8c0bb6, type: 3}
+    - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
       propertyPath: attackSpeedStatData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClipsWithRandomPitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755849119236310392, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6432249927266061861, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
       propertyPath: maxHealth
@@ -116,6 +136,18 @@ PrefabInstance:
       propertyPath: healthStat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7123491207524088249, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: chanceOfPlay
+      value: 0.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123491207524088249, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123491207524088249, guid: 5daa2e50b44942547b9457779f4f864f, type: 3}
+      propertyPath: 'clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ea7fbe8a781f0247bf45d5b8e1d7c1c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

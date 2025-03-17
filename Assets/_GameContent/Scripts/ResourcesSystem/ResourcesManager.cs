@@ -74,6 +74,39 @@ public class ResourcesManager : MonoBehaviour
         SaveResource(resource);
         OnResourceChange?.Invoke(data, GetResourceAmount(data));
     }
+    public void AddResourceWithLimit(ResourceData data, int amount, int limit)
+    {
+        Resource resource = resources.Find(r => r.Data == data);
+        if (resource != null)
+        {
+            resource.AddAmount(amount);
+            if (resource.Amount >= limit)
+                resource.Amount = limit;
+        }
+        else
+        {
+            Resource addedResource = new Resource(data, amount);
+            if (addedResource.Amount >= limit)
+                addedResource.Amount = limit;
+            resources.Add(addedResource);
+        }
+        SaveResource(resource);
+        OnResourceChange?.Invoke(data, GetResourceAmount(data));
+    }
+    public void SetResource(ResourceData data, int amount)
+    {
+        Resource resource = resources.Find(r => r.Data == data);
+        if (resource != null)
+        {
+            resource.Amount = amount;
+        }
+        else
+        {
+            resources.Add(new Resource(data, amount));
+        }
+        SaveResource(resource);
+        OnResourceChange?.Invoke(data, GetResourceAmount(data));
+    }
     public void SpendResource(ResourceData data, int amount)
     {
         Resource resource = resources.Find(r => r.Data == data);

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SquadReviver : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SquadReviver : MonoBehaviour
     [SerializeField] private GameObject fxAppear;
     [SerializeField] private StatData doubleReviveStat;
     [SerializeField] private StatData maxReviveStat;
+    [SerializeField] private UnityEvent onRevive;
     private Squad squad;
     private int maxUnits = 200;
     private float doubleReviveChance = 0.0f;
@@ -36,6 +38,7 @@ public class SquadReviver : MonoBehaviour
     }
     private IEnumerator ReviveDelay(List<DeadUnit> squadDeadUnits)
     {
+        bool isRevived = false;
 
         for (int i = 0; i < squadDeadUnits.Count; i++)
         {
@@ -48,6 +51,10 @@ public class SquadReviver : MonoBehaviour
             if (squad.UnitsCount >= maxUnits)
             {
                 break;
+            }
+            else
+            {
+                isRevived = true;
             }
             if (fxAppear != null)
                 Instantiate(fxAppear, squadDeadUnits[i].transform.position, Quaternion.identity);
@@ -63,6 +70,10 @@ public class SquadReviver : MonoBehaviour
                 Unit reviveUnit = squadDeadUnits[i].ReviveUnit();
                 squad.AddUnit(reviveUnit);
             }
+        }
+        if (isRevived)
+        {
+            onRevive?.Invoke();
         }
         for (int i = 0; i < squadDeadUnits.Count; i++)
         {

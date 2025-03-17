@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Squad : MonoBehaviour
@@ -9,6 +10,7 @@ public class Squad : MonoBehaviour
     [SerializeField] private List<Unit> startSquadMemders = new List<Unit>();
     [SerializeField] private bool isDeadUnitLeave;
     [SerializeField] private float attractToCenterMultiplier;
+    [SerializeField] private UnityEvent onUnitDead;
     private List<Unit> squadMembers = new List<Unit>();
     private List<DeadUnit> deadUnits = new List<DeadUnit>();
 
@@ -69,6 +71,7 @@ public class Squad : MonoBehaviour
             unit.OnUnitDetect -= SquadAttackTrigger;
             squadMembers.Remove(unit);
             OnUnitRemove?.Invoke(unit);
+            onUnitDead?.Invoke();
         }
         if (isDeadUnitLeave && squadMembers.Count <= 0)
         {

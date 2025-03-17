@@ -21,12 +21,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5912976604937920239, guid: 8ebbe153a2a841e439c54c2ea8f289af, type: 3}
+    - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: postAttackDelay
       value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: attackSpeedStatData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClipsWithRandomPitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 161557699674016608, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1337616072599313476, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: maxHealth
@@ -94,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5216218395540312476, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: damage
-      value: 80
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5216218395540312476, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: deadUnit
@@ -120,6 +140,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5_Ranged
       objectReference: {fileID: 0}
+    - target: {fileID: 8984152705710297951, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: chanceOfPlay
+      value: 0.525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984152705710297951, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984152705710297951, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
+      propertyPath: 'clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 14a3c00ad8e66da408991fbfa36137e0, type: 3}
     - target: {fileID: 9217739179474309969, guid: c1fcb682e7809d54ea339f768ff7f933, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.381

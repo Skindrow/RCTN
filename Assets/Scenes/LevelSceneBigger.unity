@@ -814,6 +814,52 @@ MonoBehaviour:
   - {x: 44, y: 0, z: 0}
   - {x: 0, y: 30, z: 0}
   - {x: 0, y: -30, z: 0}
+--- !u!1 &855701440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855701441}
+  - component: {fileID: 855701442}
+  m_Layer: 0
+  m_Name: MusicStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &855701441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855701440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1339533860}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855701442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855701440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074b93fca3487f44bbee59078e3e6745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: d9d3704529a715943a9ae6984c1856db, type: 3}
+  isOnStart: 1
 --- !u!1 &923577501
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +1026,7 @@ GameObject:
   - component: {fileID: 986518084}
   - component: {fileID: 986518085}
   - component: {fileID: 986518086}
+  - component: {fileID: 986518087}
   m_Layer: 0
   m_Name: PlayerSquad
   m_TagString: Untagged
@@ -1018,6 +1065,21 @@ MonoBehaviour:
   startSquadMemders: []
   isDeadUnitLeave: 0
   attractToCenterMultiplier: 0.1
+  onUnitDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986518087}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlayClipsWithRandomPitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &986518084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,6 +1096,21 @@ MonoBehaviour:
   fxAppear: {fileID: 8749643920902237973, guid: a11366e0345daa44da4e7a2a3b822acb, type: 3}
   doubleReviveStat: {fileID: 11400000, guid: 3a2f50cfa6e3f4142a6755330f9cc961, type: 2}
   maxReviveStat: {fileID: 11400000, guid: 491d6395b3adcb145a9fa11bfbc6b22e, type: 2}
+  onRevive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986518087}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ed85522a8a263954cbfa4cb751c562e5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &986518085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,6 +1151,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 855701442}
+        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+        m_MethodName: StopMusicPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 986518087}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: afbce1123f664424fa5f467a36cb3168, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &986518086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,6 +1188,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squad: {fileID: 986518083}
+--- !u!114 &986518087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986518081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d47a95aa63f2d04eb168b025e882abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 8a8a352ad7b6d16418b3170a31f92ed2, type: 3}
+  - {fileID: 8300000, guid: e032d24856eb8dd43983152f355380b6, type: 3}
+  - {fileID: 8300000, guid: eb3a94324ac3cac48a966482214d1035, type: 3}
+  chanceOfPlay: 1
 --- !u!1 &1172092805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1507,7 @@ Transform:
   - {fileID: 1306215335}
   - {fileID: 1504444620}
   - {fileID: 653454218}
+  - {fileID: 855701441}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387871415
