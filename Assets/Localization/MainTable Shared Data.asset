@@ -75,6 +75,18 @@ MonoBehaviour:
     m_Key: BuyButton
     m_Metadata:
       m_Items: []
+  - m_Id: 20710171807588352
+    m_Key: Tuttor1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20710255223906304
+    m_Key: Tuttor2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20710313382125568
+    m_Key: Tuttor3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

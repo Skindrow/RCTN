@@ -82,6 +82,18 @@ MonoBehaviour:
     m_Localized: "Sat\u0131n almak"
     m_Metadata:
       m_Items: []
+  - m_Id: 20710255223906304
+    m_Localized: "D\xFC\u015Fmanlar\u0131 bul ve onlar\u0131 yen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20710313382125568
+    m_Localized: "D\xFC\u015Fmanlar\u0131 tak\u0131m\u0131n\u0131za geri getirin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20710171807588352
+    m_Localized: "Ta\u015F\u0131mak i\xE7in bas\u0131l\u0131 tutun"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
