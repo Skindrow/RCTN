@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,12 +36,24 @@ public class LevelDisplay : MonoBehaviour
     }
     private void DisplayLevels()
     {
+        for (int i = 0; i < openedLevels.Length; i++)
+        {
+            for (int j = 0; j < levelDatas.Length; j++)
+            {
+                if (openedLevels[i] == levelDatas[j])
+                {
+                    string pref = this.pref + j.ToString();
+                    SaveSystem.SaveInt(pref, 1);
+                }
+            }
+        }
         for (int i = 0; i < levelDatas.Length; i++)
         {
             LevelUI levelUIGO = Instantiate(levelUI, parent);
             levelUIGO.SetLevel(levelDatas[i].levelSprite, new Resource(keyData, levelDatas[i].keyCost), i, levelDatas[i].keyCost,
                 levelDatas[i].levelName.GetLocalizedString());
             string pref = this.pref + i.ToString();
+
             if (!SaveSystem.HasKey(pref) || SaveSystem.LoadInt(pref) != 1)
             {
                 levelUIGO.LockLevel();

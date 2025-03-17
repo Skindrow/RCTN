@@ -10,6 +10,8 @@ public class AIControls : MonoBehaviour
     [SerializeField] private float maxForvardTime;
     [SerializeField] private float attackTime;
     [SerializeField] private float timeAfterAttack;
+    [SerializeField] private float chaseMultiplier = 1;
+    [SerializeField] private float moveMultiplier = 1;
 
 
     private bool isAttacked = false;
@@ -49,7 +51,7 @@ public class AIControls : MonoBehaviour
         while (estimatedTime > Time.time)
         {
             if (Vector2.Distance(squad.CenterOfSquad(), pos) > 1f)
-                squad.SquadMove(pos);
+                squad.SquadMove(pos, moveMultiplier);
             yield return new WaitForFixedUpdate();
         }
         StartMove();
@@ -61,7 +63,7 @@ public class AIControls : MonoBehaviour
         Vector2 centerOfSquad = unit.GetComponent<Unit>().CurrentSquad.CenterOfSquad();
         while (estimatedTime > Time.time)
         {
-            squad.SquadMove(centerOfSquad);
+            squad.SquadMove(centerOfSquad, chaseMultiplier);
 
             yield return new WaitForFixedUpdate();
         }

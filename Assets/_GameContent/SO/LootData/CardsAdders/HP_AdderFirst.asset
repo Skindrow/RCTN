@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c85074517396ff4f9dee3f2fbccd0b1, type: 3}
+  m_Name: HP_AdderFirst
+  m_EditorClassIdentifier: 
+  cardStatUI: {fileID: 1551871152284474902, guid: 144c82895cec38342b096e4a5e7c3950, type: 3}
+  cardStatData: {fileID: 11400000, guid: c6db5ef84ddfa3e449d7f3fcb4a5056b, type: 2}

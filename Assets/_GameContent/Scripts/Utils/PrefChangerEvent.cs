@@ -11,18 +11,18 @@ public class PrefChangerEvent : MonoBehaviour
     private int prefInt;
     public void PrefChange(int prefChange)
     {
-        PlayerPrefs.SetInt(pref, prefChange);
+        SaveSystem.SaveInt(pref, prefChange);
         PrefInitialize();
     }
     public void PreCallAndPrefChange(int prefChange)
     {
         PrefInitialize();
-        PlayerPrefs.SetInt(pref, prefChange);
+        SaveSystem.SaveInt(pref, prefChange);
     }
     private void PrefInitialize()
     {
-        if (PlayerPrefs.HasKey(pref))
-            prefInt = PlayerPrefs.GetInt(pref);
+        if (SaveSystem.HasKey(pref))
+            prefInt = SaveSystem.LoadInt(pref);
         else
             prefInt = 0;
         if (prefDeterminedEvents.Length > prefInt)

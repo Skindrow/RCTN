@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MAX
   m_EditorClassIdentifier: 
   StatPref: MAX
-  DefaultValue: 0.1
+  DefaultValue: 0.15

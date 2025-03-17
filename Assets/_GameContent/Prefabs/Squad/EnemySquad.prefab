@@ -48,8 +48,10 @@ MonoBehaviour:
   squadFraction: 1
   startSquadMemders: []
   isDeadUnitLeave: 1
-  isCanRevive: 0
   attractToCenterMultiplier: 0.1
+  onUnitDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4954885908723111829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,3 +70,5 @@ MonoBehaviour:
   maxForvardTime: 20
   attackTime: 1
   timeAfterAttack: 2
+  chaseMultiplier: 0.5
+  moveMultiplier: 0.8

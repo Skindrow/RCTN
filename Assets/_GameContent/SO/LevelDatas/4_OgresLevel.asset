@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf848a2c8da1bd8469670b5a42dbe73f, type: 3}
+  m_Name: 4_OgresLevel
+  m_EditorClassIdentifier: 
+  levelSprite: {fileID: 865710453, guid: 88b3800a84fe26c41be4f4180f3b87ab, type: 3}
+  keyCost: 5
+  EnemySquadsData:
+  - {fileID: 11400000, guid: e763e6292984810499c01d147748ca29, type: 2}
+  - {fileID: 11400000, guid: 1d8b5fa9cd8ee7b4f87b03c60664f54a, type: 2}
+  - {fileID: 11400000, guid: 4d03bebdbebaf8545b7138d14916fd05, type: 2}
+  - {fileID: 11400000, guid: 1e58be4a2af7e2e4099a333d882e6feb, type: 2}
+  - {fileID: 11400000, guid: f0b63fd606aec404c88e564f33e3ee7c, type: 2}
+  - {fileID: 11400000, guid: c9e7c0cad0f4f5b45879aa29b51693bb, type: 2}
+  - {fileID: 11400000, guid: ffb22da2f6004d148b1e48aeb546e5b6, type: 2}
+  - {fileID: 11400000, guid: e5975a6b5dc24dc42b70e6fbd2d50b0d, type: 2}
+  LoopEnemySquadsData:
+  - {fileID: 11400000, guid: e5975a6b5dc24dc42b70e6fbd2d50b0d, type: 2}
+  PlayerSquadData: {fileID: 11400000, guid: 8ca749d7d372e134db34d9924c2f642f, type: 2}
+  ChestSpawnData: {fileID: 11400000, guid: a5f17868c4760664d949e657f384a8ec, type: 2}
+  CameraColor: {r: 0.18039216, g: 0.34117648, b: 0.32156864, a: 1}
+  Map: {fileID: 2064461254817072695, guid: 060fd144c18f0ee458a0d99f0ddde9ed, type: 3}
+  levelName:
+    m_TableReference:
+      m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
+    m_TableEntryReference:
+      m_KeyId: 20556230595715072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

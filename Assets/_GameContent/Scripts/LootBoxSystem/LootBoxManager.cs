@@ -6,9 +6,11 @@ using UnityEngine.Events;
 public class LootBoxManager : MonoBehaviour
 {
     [SerializeField] private int cost;
+    [SerializeField] private List<Loot> seededLoot;
     [SerializeField] private List<Loot> possibleLoots;
     [SerializeField] private Transform parent;
     [SerializeField] private ResourcesChanger buyer;
+    [SerializeField] private UnityEvent onLootBoxBuy;
     [SerializeField] private UnityEvent onNotEnoughGold;
     [SerializeField] private GameObject blockPanel;
     [SerializeField] private GameObject lootButton;
@@ -39,6 +41,7 @@ public class LootBoxManager : MonoBehaviour
         {
             buyer.ResourceSpend();
             LootBoxGet();
+            onLootBoxBuy?.Invoke();
         }
         else
         {

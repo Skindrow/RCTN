@@ -104,6 +104,18 @@ public class Squad : MonoBehaviour
             squadMembers[i].Attract(squadCenter, attractToCenterMultiplier);
         }
     }
+    public void SquadMove(Vector2 targetPosition , float attractMultiplier)
+    {
+        Vector3 squadCenter = CenterOfSquad();
+        for (int i = 0; i < squadMembers.Count; i++)
+        {
+            squadMembers[i].MoveTo(targetPosition , attractMultiplier);
+        }
+        for (int i = 0; i < squadMembers.Count; i++)
+        {
+            squadMembers[i].Attract(squadCenter, attractToCenterMultiplier);
+        }
+    }
     public Vector3 CenterOfSquad()
     {
         Vector3 averageVector = Vector3.zero;

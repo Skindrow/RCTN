@@ -12,23 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf848a2c8da1bd8469670b5a42dbe73f, type: 3}
   m_Name: 3_OrcLevel
   m_EditorClassIdentifier: 
-  levelSprite: {fileID: -4247964249229121724, guid: cc0bb621bec51d949887c4c81588db35, type: 3}
-  keyCost: 1
+  levelSprite: {fileID: 4028208681254442328, guid: c1f2eb9e07f67a441b856f4d704347ed, type: 3}
+  keyCost: 3
   EnemySquadsData:
-  - {fileID: 11400000, guid: 6cb006c701be4c34a89cc77c0c3dfdb2, type: 2}
-  - {fileID: 11400000, guid: dd59316b2076d8444937a69360f68287, type: 2}
-  - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
+  - {fileID: 11400000, guid: 3701e7db92c27ec4592d1c630bd98f0a, type: 2}
+  - {fileID: 11400000, guid: 64c325e40c6baa549829a3167437fc11, type: 2}
+  - {fileID: 11400000, guid: 42365799b3f2d8945b6a2be4b664ebf7, type: 2}
+  - {fileID: 11400000, guid: 3400a124133939f408e9625d7ce3dbac, type: 2}
+  - {fileID: 11400000, guid: ca26ca7bfbf7d5146939852724888fc1, type: 2}
+  - {fileID: 11400000, guid: d9ae1f9228b1a8249bd0f6c119deb717, type: 2}
+  - {fileID: 11400000, guid: 6901a7cd3be569347b6cc7af2eca3d6f, type: 2}
+  - {fileID: 11400000, guid: 8541ebe94d8b91749b5fe9db11bab8fa, type: 2}
   LoopEnemySquadsData:
-  - {fileID: 11400000, guid: bcb3adf81b9528a4bb55ed987e3239ce, type: 2}
-  PlayerSquadData: {fileID: 11400000, guid: 69377d89b8f1bbb4eb05adc1c7ec2b76, type: 2}
-  ChestSpawnData: {fileID: 0}
+  - {fileID: 11400000, guid: 8541ebe94d8b91749b5fe9db11bab8fa, type: 2}
+  PlayerSquadData: {fileID: 11400000, guid: d3f9a6c6c21c0984294fd8356fea6b78, type: 2}
+  ChestSpawnData: {fileID: 11400000, guid: dbb3473c89df3084489c180493187879, type: 2}
   CameraColor: {r: 0.9372549, g: 0.7137255, b: 0.25882354, a: 1}
-  Map: {fileID: 0}
+  Map: {fileID: 343569269234105677, guid: 8caf12eee4af7c3419df48e4e24ebc65, type: 3}
   levelName:
     m_TableReference:
       m_TableCollectionName: GUID:46c7517ba5248cf4d934fa870da3f20d
     m_TableEntryReference:
-      m_KeyId: 18070183366369280
+      m_KeyId: 20556185188179968
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

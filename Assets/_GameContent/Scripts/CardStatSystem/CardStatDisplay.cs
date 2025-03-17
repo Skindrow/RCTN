@@ -23,7 +23,8 @@ public class CardStatDisplay : MonoBehaviour
             CardStatUI cardUI = Instantiate(cardStatUI, parent);
             Sprite icon = CardStatManager.Instance.Cards[i].Data.Icon;
             int count = CardStatManager.Instance.Cards[i].Amount;
-            float percents = StatsHolder.Instance.GetValue(CardStatManager.Instance.Cards[i].Data.StatData.StatPref);
+            float percents = StatsHolder.Instance.GetValue(CardStatManager.Instance.Cards[i].Data.StatData.StatPref) - 
+                CardStatManager.Instance.Cards[i].Data.StatData.DefaultValue;
             string describe = CardStatManager.Instance.Cards[i].Data.Describe.GetLocalizedString();
             cardUI.SetStatCard(icon, count, percents, describe);
             currentCardsUI.Add(cardUI);

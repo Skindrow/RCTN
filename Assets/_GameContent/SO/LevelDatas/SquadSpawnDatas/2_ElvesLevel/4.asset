@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec38721d2fd49f428a914affd5f940d, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  UnitsChances:
+  - UnitPref: {fileID: 1985693962428461482, guid: 2e67d89df3f953444b194fc4d0b4e8b0, type: 3}
+    ChanceOfSpawn: 2
+  - UnitPref: {fileID: 5332868914615682257, guid: c9af01a9ec0b734499b0553ba45e522d, type: 3}
+    ChanceOfSpawn: 2
+  - UnitPref: {fileID: 1985693962428461482, guid: 0c47364cd5a4c1248b524d2f547733ea, type: 3}
+    ChanceOfSpawn: 1
+  MinCount: 1
+  MaxCount: 18
+  secondsBeforeSwitch: 60
