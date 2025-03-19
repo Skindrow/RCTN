@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using YG;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -137,9 +138,18 @@ public class SaveSystem : MonoBehaviour
     private static void LoadDTS()
     {
         string pref = "";
-        if (PlayerPrefs.HasKey(PREF))
+        //if (PlayerPrefs.HasKey(PREF))
+        //{
+        //    pref = PlayerPrefs.GetString(PREF);
+        //    dts = StringToDTS(pref);
+        //}
+        //else
+        //{
+        //    dts = new Dictionary<string, string>();
+        //}
+        if (YG2.saves != null && !string.IsNullOrEmpty(YG2.saves.DataToSave))
         {
-            pref = PlayerPrefs.GetString(PREF);
+            pref = YG2.saves.DataToSave;
             dts = StringToDTS(pref);
         }
         else
@@ -151,6 +161,17 @@ public class SaveSystem : MonoBehaviour
     private static void SaveDTS()
     {
         string pref = DTSToString();
-        PlayerPrefs.SetString(PREF, pref);
+        //PlayerPrefs.SetString(PREF, pref);
+
+        YG2.saves.DataToSave = pref;
+        YG2.SaveProgress();
+    }
+}
+
+namespace YG
+{
+    public partial class SavesYG
+    {
+        public string DataToSave;
     }
 }
