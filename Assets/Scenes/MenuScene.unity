@@ -6484,7 +6484,7 @@ MonoBehaviour:
     Max: 10
   - LootAdder: {fileID: 11400000, guid: b2b84869e58cb6e4f98d83168e3044ad, type: 2}
     Weight: 0.2
-    Max: 10
+    Max: 5
   - LootAdder: {fileID: 11400000, guid: a46c7363ea208824dbb4423c8396dda2, type: 2}
     Weight: 99999
     Max: 1

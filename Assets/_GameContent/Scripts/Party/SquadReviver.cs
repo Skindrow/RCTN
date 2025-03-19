@@ -11,7 +11,7 @@ public class SquadReviver : MonoBehaviour
     [SerializeField] private StatData maxReviveStat;
     [SerializeField] private UnityEvent onRevive;
     private Squad squad;
-    private int maxUnits = 200;
+    private int maxUnits = 400;
     private float doubleReviveChance = 0.0f;
 
     public int MaxUnits => maxUnits;
